@@ -1,3 +1,16 @@
+// ***********************************************************************
+// Assembly         : 
+// Author           : Alberto-PC
+// Created          : 05-12-2016
+//
+// Last Modified By : Alberto-PC
+// Last Modified On : 06-08-2016
+// ***********************************************************************
+// <copyright file="FuzzyExtractor.java" company="Military Technical Academy">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 package sid;
 
 import javacard.framework.ISO7816;
@@ -6,30 +19,73 @@ import javacard.framework.JCSystem;
 import javacard.framework.Util;
 import javacard.security.RandomData;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class FuzzyExtractor.
+ */
 public class FuzzyExtractor  implements IConsts{
 
+	/** The m. */
 	public  short  M=9;
+	
+	/** The t. */
 	public  short  T=52;
+	
+	/** The d. */
 	public  short  D=(short) (2*T+1);
+	
+	/** The length. */
 	public  short  LENGTH=384;
+	
+	/** The p. */
 	public short[] P = new short[15];
+	
+	/** The alpha to. */
 	public short[] ALPHA_TO = new short[512];
+	
+	/** The encoded data. */
 	public byte[]  ENCODED_DATA = new byte[512];
+	
+	/** The index of. */
 	public short[] INDEX_OF = new short[512];
+	
+	/** The elp. */
 	public short[]  elp = new short[128*128]; // 128x128
+	
+	/** The l. */
 	public byte[]   l = new byte[256];
+	
+	/** The u_lu. */
 	public short[]  u_lu = new short[256];
+	
+	/** The s. */
 	public short[]  s = new short[256];
+	
+	/** The root. */
 	public short[]  root = new short[256];
+	
+	/** The loc. */
 	public short[]  loc = new short[256];
+	
+	/** The error. */
 	public short[]  error = new short[256];
+	
+	/** The reg. */
 	public short[]  reg = new short[256];
+	
+	/** The temp. */
 	public byte[]   temp = new byte[512];
+	
+	/** The k. */
 	public short    n=511,k=23;
 	
+	/** The p_ instance. */
 	private static FuzzyExtractor p_Instance=null;
+	
+	/** The p_ memory. */
 	private static MemoryManager p_Memory=null;
 	
+	/** The Galois. */
 	public final short[] Galois = {(short)1,(short)406,(short)440,(short)119,(short)250,(short)474,(short)302,(short)37,(short)125,(short)31,(short)370,(short)503,(short)443,(short)492,(short)385,(short)302,(short)168,(short)28,(short)178,(short)108,(short)403,(short)164,(short)367,(short)438,(short)46,(short)344,(short)64,(short)38,(short)370,(short)206,(short)257,(short)101,(short)153,(short)96,(short)144,(short)372,(short)153,(short)219,(short)223,(short)141,(short)462,(short)3,(short)164,(short)12,(short)481,(short)181,(short)399,(short)167,(short)342,(short)340,(short)503,
 			(short)286,(short)26,(short)373,(short)26,(short)164,(short)88,(short)209,(short)43,(short)40,(short)69,(short)435,(short)224,(short)211,(short)438,(short)125,(short)34,(short)380,(short)233,(short)325,(short)129,(short)445,(short)153,(short)271,(short)437,(short)443,(short)479,(short)435,(short)152,(short)75,(short)38,(short)325,(short)421,(short)402,(short)253,(short)35,(short)269,(short)101,(short)44,(short)247,(short)32,(short)172,(short)244,(short)142,(short)84,(short)213,(short)129,(short)436,(short)315,(short)237,(short)201,
 			(short)156,(short)217,(short)345,(short)291,(short)280,(short)5,(short)143,(short)118,(short)205,(short)333,(short)474,(short)200,(short)410,(short)36,(short)478,(short)503,(short)346,(short)440,(short)105,(short)484,(short)166,(short)231,(short)36,(short)24,(short)51,(short)336,(short)360,(short)185,(short)511,(short)118,(short)342,(short)361,(short)428,(short)452,(short)351,(short)115,(short)234,(short)191,(short)266,(short)474,(short)228,(short)354,(short)106,(short)249,(short)263,(short)308,(short)341,(short)281,(short)146,(short)43,
@@ -39,11 +95,17 @@ public class FuzzyExtractor  implements IConsts{
 			(short)457,(short)210,(short)92,(short)167,(short)316,(short)293,(short)447,(short)95,(short)322,(short)317,(short)239,(short)149,(short)289,(short)72,(short)313,(short)404,(short)210,(short)439,(short)6,(short)509,(short)129,(short)40,(short)286,(short)135,(short)68,(short)461,(short)225,(short)436,(short)511,(short)432,(short)270,(short)164,(short)204,(short)285,(short)5,(short)175,(short)411,(short)497,(short)199,(short)141,(short)201,(short)469,(short)270,(short)349,(short)191,(short)465,(short)303,(short)494,(short)343,(short)338,
 			(short)101,(short)131,(short)266,(short)160,(short)107,(short)30,(short)77,(short)390,(short)474,(short)154,(short)155,(short)0,(short)1};
 	
+	/**
+	 * Instantiates a new fuzzy extractor.
+	 */
 	private FuzzyExtractor() 
 	{
 		
 	}
 	
+	/**
+	 * Creates the instance.
+	 */
 	public void createInstance()
 	{
 		p_Memory = MemoryManager.getInstance();
@@ -51,6 +113,9 @@ public class FuzzyExtractor  implements IConsts{
 		generate_gf();
 	}
 	
+	/**
+	 * Precompute input.
+	 */
 	public void precomputeInput()
 	{
 		short i;
@@ -65,6 +130,9 @@ public class FuzzyExtractor  implements IConsts{
 		n = (short) (n / 2 - 1);
 	}
 	
+	/**
+	 * Generate_gf.
+	 */
 	public void generate_gf()
 	{
 		short[] pShort = p_Memory.getShortRam();
@@ -93,6 +161,16 @@ public class FuzzyExtractor  implements IConsts{
 		for( i = 0 ; i < n ; i++)
 			ALPHA_TO[i]=pShort[i];
 	}
+
+/**
+ * Xor.
+ *
+ * @param src1 the src1
+ * @param offset the offset
+ * @param src2 the src2
+ * @param offset2 the offset2
+ * @param size the size
+ */
 /*	
 	void generate_poly()
 	{
@@ -178,6 +256,17 @@ public class FuzzyExtractor  implements IConsts{
 			pByte[i] = (byte) (src1[(short)(i+offset)] ^ src2[(short)(i+offset2)]);
 		Util.arrayCopyNonAtomic(pByte, OFFSET_START, src1, OFFSET_START, size);
 	}
+	
+	/**
+	 * Xor2.
+	 *
+	 * @param src1 the src1
+	 * @param offset the offset
+	 * @param src2 the src2
+	 * @param offset2 the offset2
+	 * @param size the size
+	 * @param offset_out the offset_out
+	 */
 	void xor2(byte[] src1,short offset,byte[] src2,short offset2,short size,short offset_out)
 	{
 		byte[] pByte = p_Memory.geByteRam();
@@ -185,6 +274,13 @@ public class FuzzyExtractor  implements IConsts{
 			pByte[i] = (byte) (src1[(short)(i+offset)] ^ src2[(short)(i+offset2)]);
 		Util.arrayCopyNonAtomic(pByte, OFFSET_START, temp, OFFSET_START, size);
 	}
+	
+	/**
+	 * Encode.
+	 *
+	 * @param data the data
+	 * @return the byte[]
+	 */
 	byte[] encode(byte[] data)
 	{
 		byte[] temp_ram = p_Memory.geByteRam();
@@ -217,6 +313,11 @@ public class FuzzyExtractor  implements IConsts{
 		return ENCODED_DATA;
 	}
 
+	/**
+	 * Decode.
+	 *
+	 * @param data the data
+	 */
 	public  void decode(byte[] data)
 	{
 		byte[] transientMemory = p_Memory.geByteRam();
@@ -323,6 +424,12 @@ public class FuzzyExtractor  implements IConsts{
 		}
 		Util.arrayCopyNonAtomic(data, (short)(LENGTH - k), data, OFFSET_START, k);
 	}
+	
+	/**
+	 * Gets the single instance of FuzzyExtractor.
+	 *
+	 * @return single instance of FuzzyExtractor
+	 */
 	public static FuzzyExtractor getInstance()
 	{
 		if(p_Instance == null)
@@ -330,6 +437,13 @@ public class FuzzyExtractor  implements IConsts{
 		return p_Instance;
 	}
 	
+	/**
+	 * Make fuzzy.
+	 *
+	 * @param B the b
+	 * @param P the p
+	 * @return the byte[]
+	 */
 	byte[] makeFuzzy(byte[] B,byte[] P)
 	{
 		xor2(B,OFFSET_START,P,OFFSET_START,LENGTH,OFFSET_START);

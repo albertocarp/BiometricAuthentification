@@ -1,3 +1,20 @@
+/*
+ * 
+ */
+
+// ***********************************************************************
+// Assembly         : 
+// Author           : Alberto-PC
+// Created          : 05-12-2016
+//
+// Last Modified By : Alberto-PC
+// Last Modified On : 06-08-2016
+// ***********************************************************************
+// <copyright file="User.java" company="Military Technical Academy">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 package sid;
 
 import com.sun.javacard.crypto.al;
@@ -13,30 +30,75 @@ import javacard.security.RSAPublicKey;
 import javacard.security.RandomData;
 import javacardx.crypto.Cipher;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class User.
+ */
 public class User  implements IConsts 
 {
+	
+	/** The Password. */
 	byte[] Password = new byte[128];
+	
+	/** The Password size. */
 	short PasswordSize;
+	
+	/** The Identity. */
 	byte[] Identity = new byte[128];
+	
+	/** The Identity size. */
 	short IdentitySize;
+	
+	/** The message_registration. */
 	byte[] message_registration = new byte[128];
+	
+	/** The p number. */
 	byte[] P_NUMBER = new byte[128];
+	
+	/** The q number. */
 	byte[] Q_NUMBER = new byte[128];
+	
+	/** The p. */
 	byte[] P = new byte[512];
+	
+	/** The hash r. */
 	byte[] HASH_R = new byte[20];
+	
+	/** The S3. */
 	byte[] S3 = new byte[20];
+	
+	/** The M1. */
 	byte[] M1 = new byte[128];
+	
+	/** The buffer. */
 	byte[] BUFFER = new byte[512];
+	
+	/** The BUFFE r2. */
 	byte[] BUFFER2 = new byte[400];
+	
+	/** The S2_ prim. */
 	byte[] S2_PRIM = new byte[128];
+	
+	/** The N1. */
 	byte[] N1 = new byte[128];
+	
+	/** The sk. */
 	byte[] SK = new byte[20];
+	
+	/** The M2_ n1. */
 	byte[] M2_N1 = new byte[128];
+	
+	/** The index_buffer. */
 	short index_buffer = 0;
+	
+	/** The rsa. */
 	Cipher rsa;
+	
+	/** The m rsa public key mod pow. */
 	RSAPrivateKey mRsaPublicKeyModPow;
 	
-	 public  byte[] GROUP_P = {(byte) 0xD2, (byte) 0x1A, (byte) 0xE8, (byte) 0xD6, (byte) 0x6E, (byte) 0x6C, (byte) 0x6B, (byte) 0x3C, (byte) 0xED, (byte) 0x0E, 
+	 /** The group p. */
+ 	public  byte[] GROUP_P = {(byte) 0xD2, (byte) 0x1A, (byte) 0xE8, (byte) 0xD6, (byte) 0x6E, (byte) 0x6C, (byte) 0x6B, (byte) 0x3C, (byte) 0xED, (byte) 0x0E, 
 			 (byte) 0xB3, (byte) 0xDF, (byte) 0x1A, (byte) 0x26, (byte) 0xC9, (byte) 0x1B, (byte) 0xDE, (byte) 0xED, (byte) 0x01, (byte) 0x3C, (byte) 0x17,
 			 (byte) 0xD8, (byte) 0x49, (byte) 0xD3, (byte) 0x0E, (byte) 0xC3, (byte) 0x09, (byte) 0x81, (byte) 0x3E, (byte) 0x4D, (byte) 0x37, (byte) 0x99, (byte) 0xF2, 
 			 (byte) 0x6D, (byte) 0xB0, (byte) 0xD4, (byte) 0x94, (byte) 0xE8, (byte) 0x2E, (byte) 0xC6, (byte) 0x1E, (byte) 0xA9, (byte) 0xFD, (byte) 0xC7, (byte) 0x0B, 
@@ -47,17 +109,37 @@ public class User  implements IConsts
 			 (byte) 0xF0, (byte) 0xB8, (byte) 0x42, (byte) 0x0C, (byte) 0x68, (byte) 0x34, (byte) 0xCB, (byte) 0x17, (byte) 0x93, (byte) 0x03, (byte) 0x86, (byte) 0xDE, 
 			 (byte) 0xDA, (byte) 0xB2, (byte) 0xB0, (byte) 0x7D, (byte) 0xD4, (byte) 0x73, (byte) 0x44, (byte) 0x9A, (byte) 0x48, (byte) 0xBA, (byte) 0xAB, (byte) 0x31,
 			 (byte) 0x62, (byte) 0x86, (byte) 0xB4, (byte) 0x21, (byte) 0x05, (byte) 0x24, (byte) 0x75, (byte) 0xD1, (byte) 0x34, (byte) 0xCD, (byte) 0x3B};
-	MemoryManager manager;
+	 
+ 	/** The manager. */
+ 	MemoryManager manager;
+	
+	/**
+	 * The Class Biometrics.
+	 */
 	class Biometrics {
+		
+		/** The Biometrics. */
 		byte[] Biometrics = new byte[1024];
+		
+		/** The index. */
 		short index=0;
+		
+		/** The size. */
 		short size=0;
 	}
 
+	/** The biometric. */
 	Biometrics biometric = new Biometrics(); 
+	
+	/** The p_ instance. */
 	static User p_Instance;
+	
+	/** The p_ instance fuzzy. */
 	static FuzzyExtractor p_InstanceFuzzy;
 	
+	/**
+	 * Instantiates a new user.
+	 */
 	private User()
 	{
 		p_InstanceFuzzy =  FuzzyExtractor.getInstance();
@@ -66,27 +148,60 @@ public class User  implements IConsts
 		mRsaPublicKeyModPow = (RSAPrivateKey) KeyBuilder.buildKey(
 				KeyBuilder.TYPE_RSA_PRIVATE, KeyBuilder.LENGTH_RSA_1024, false);
 	}
+	
+	/**
+	 * Gets the single instance of User.
+	 *
+	 * @return single instance of User
+	 */
 	public static User getInstance()
 	{
 		if(p_Instance == null)
 			p_Instance = new User();
 		return p_Instance;
 	}
+	
+	/**
+	 * Creates the instance fuzzy.
+	 */
 	public void createInstanceFuzzy()
 	{
 		FuzzyExtractor.getInstance().createInstance();	
 	}
+	
+	/**
+	 * Sets the password.
+	 *
+	 * @param password the password
+	 * @param offsetPassword the offset password
+	 * @param sizePassword the size password
+	 */
 	public void setPassword(byte[] password,short offsetPassword,short sizePassword)
 	{
 		Util.arrayCopy(password, offsetPassword, this.Password, OFFSET_START, sizePassword);
 		PasswordSize = sizePassword;
 	}
+	
+	/**
+	 * Sets the identity.
+	 *
+	 * @param identity the identity
+	 * @param offsetIdentity the offset identity
+	 * @param sizeIdentity the size identity
+	 */
 	public void setIdentity(byte[] identity,short offsetIdentity,short sizeIdentity)
 	{
 		Util.arrayCopy(identity, offsetIdentity, Identity, OFFSET_START, sizeIdentity);
 		IdentitySize = sizeIdentity;
 	}
 
+	/**
+	 * Update bio.
+	 *
+	 * @param arrayInfo the array info
+	 * @param offsetArray the offset array
+	 * @param sizeBio the size bio
+	 */
 	public void updateBio(byte[] arrayInfo,short offsetArray,short sizeBio)
 	{
 		Util.arrayCopy(arrayInfo,offsetArray,biometric.Biometrics,biometric.index,sizeBio);
@@ -94,11 +209,23 @@ public class User  implements IConsts
 		biometric.size += sizeBio;
 	}
 	
+	/**
+	 * Update galois field.
+	 *
+	 * @param arrayInfo the array info
+	 * @param offsetArray the offset array
+	 * @param size the size
+	 */
 	public void updateGaloisField(byte[] arrayInfo,short offsetArray,short size)
 	{
 		
 	}
 	
+	/**
+	 * Registration.
+	 *
+	 * @return the byte[]
+	 */
 	public byte[] registration()
 	{
 		byte[] transientMemory = manager.geByteRam();
@@ -136,6 +263,14 @@ public class User  implements IConsts
 		
 	}
 	
+	/**
+	 * Receive registration response.
+	 *
+	 * @param data the data
+	 * @param offset the offset
+	 * @param size the size
+	 * @param more_data the more_data
+	 */
 	public void receiveRegistrationResponse(byte[] data,short offset,short size,boolean more_data)
 	{
 		if(more_data)
@@ -156,6 +291,12 @@ public class User  implements IConsts
 	}
 
 
+	/**
+	 * Authetificate.
+	 *
+	 * @param input the input
+	 * @return the byte[]
+	 */
 	public byte[] authetificate(UserInput input)
 	{
 		byte[] r_prim = p_InstanceFuzzy.makeFuzzy(input.challange_biometric.Biometrics, P);
@@ -212,6 +353,15 @@ public class User  implements IConsts
 		//return memory;	
 		
 	}
+	
+	/**
+	 * Authetificate2.
+	 *
+	 * @param data the data
+	 * @param offsetData the offset data
+	 * @param length the length
+	 * @return the byte[]
+	 */
 	public byte[] authetificate2(byte[] data,short offsetData,short length)
 	{
 		short offset  = OFFSET_START;

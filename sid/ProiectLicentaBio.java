@@ -1,3 +1,16 @@
+// ***********************************************************************
+// Assembly         : 
+// Author           : Alberto-PC
+// Created          : 05-12-2016
+//
+// Last Modified By : Alberto-PC
+// Last Modified On : 06-08-2016
+// ***********************************************************************
+// <copyright file="ProiectLicentaBio.cpp" company="Military Technical Academy">
+//     Copyright (c) . All rights reserved.
+// </copyright>
+// <summary></summary>
+// ***********************************************************************
 package sid;
 
 import javacard.framework.APDU;
@@ -9,18 +22,36 @@ import javacard.framework.Util;
 import javacard.security.MessageDigest;
 import javacard.security.RandomData;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ProiectLicentaBio.
+ */
 public class ProiectLicentaBio extends Applet implements IConsts{
 
 	
+	/**
+	 * Instantiates a new proiect licenta bio.
+	 */
 	private ProiectLicentaBio() 
 	{
 		
 	}
 
+	/**
+	 * Install.
+	 *
+	 * @param bArray the b array
+	 * @param bOffset the b offset
+	 * @param bLength the b length
+	 * @throws ISOException the ISO exception
+	 */
 	public static void install(byte bArray[], short bOffset, byte bLength) throws ISOException {
 		new ProiectLicentaBio().register();
 	}
 	
+	/* (non-Javadoc)
+	 * @see javacard.framework.Applet#process(javacard.framework.APDU)
+	 */
 	public void process(APDU apdu) throws ISOException {
 		byte[] buf = apdu.getBuffer();
 		if(buf[ISO7816.OFFSET_CLA] != IConsts.OFFSET_CLA_APPLICATION)
@@ -45,6 +76,11 @@ public class ProiectLicentaBio extends Applet implements IConsts{
 	
 	}
 	
+	/**
+	 * Process biometrics.
+	 *
+	 * @param apdu the apdu
+	 */
 	private void processBiometrics(APDU apdu) {
 		byte[] buf = apdu.getBuffer();
 		byte state = (buf[ISO7816.OFFSET_P1]);
@@ -231,6 +267,11 @@ public class ProiectLicentaBio extends Applet implements IConsts{
 		}
 	}
 
+	/**
+	 * Test mode.
+	 *
+	 * @param apdu the apdu
+	 */
 	private void testMode(APDU apdu)
 	{
 		FuzzyExtractor.getInstance().createInstance();
