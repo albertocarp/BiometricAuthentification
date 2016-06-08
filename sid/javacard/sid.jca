@@ -1,0 +1,5194 @@
+// converted by version 1.3
+// on Tue Jun 07 22:05:36 EEST 2016
+
+.package sid {
+	.aid 0x1:0x2:0x3:0x4:0x5:0x6:0x7:0x8:0x9:0x0;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.3;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x2 1.3;		//javacard/security
+		0xA0:0x0:0x0:0x0:0x62:0x2:0x1 1.3;		//javacardx/crypto
+	}
+
+	.applet {
+		0x1:0x2:0x3:0x4:0x5:0x6:0x7:0x8:0x9:0x0:0x0 ProiectLicentaBio;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef short FuzzyExtractor/M;
+		// 1
+		instanceFieldRef short FuzzyExtractor/T;
+		// 2
+		instanceFieldRef short FuzzyExtractor/D;
+		// 3
+		instanceFieldRef short FuzzyExtractor/LENGTH;
+		// 4
+		instanceFieldRef short[] FuzzyExtractor/P;
+		// 5
+		instanceFieldRef short[] FuzzyExtractor/ALPHA_TO;
+		// 6
+		instanceFieldRef byte[] FuzzyExtractor/ENCODED_DATA;
+		// 7
+		instanceFieldRef short[] FuzzyExtractor/INDEX_OF;
+		// 8
+		instanceFieldRef short[] FuzzyExtractor/elp;
+		// 9
+		instanceFieldRef byte[] FuzzyExtractor/l;
+		// 10
+		instanceFieldRef short[] FuzzyExtractor/u_lu;
+		// 11
+		instanceFieldRef short[] FuzzyExtractor/s;
+		// 12
+		instanceFieldRef short[] FuzzyExtractor/root;
+		// 13
+		instanceFieldRef short[] FuzzyExtractor/loc;
+		// 14
+		instanceFieldRef short[] FuzzyExtractor/error;
+		// 15
+		instanceFieldRef short[] FuzzyExtractor/reg;
+		// 16
+		instanceFieldRef byte[] FuzzyExtractor/temp;
+		// 17
+		instanceFieldRef short FuzzyExtractor/n;
+		// 18
+		instanceFieldRef short FuzzyExtractor/k;
+		// 19
+		instanceFieldRef short[] FuzzyExtractor/Galois;
+		// 20
+		instanceFieldRef byte[] MemoryManager/transientMemory;
+		// 21
+		instanceFieldRef short[] MemoryManager/temp_ram;
+		// 22
+		instanceFieldRef byte[] User/Password;
+		// 23
+		instanceFieldRef short User/PasswordSize;
+		// 24
+		instanceFieldRef User$Biometrics User/biometric;
+		// 25
+		instanceFieldRef byte[] User$Biometrics/Biometrics;
+		// 26
+		instanceFieldRef byte[] User/P_NUMBER;
+		// 27
+		instanceFieldRef byte[] User/Q_NUMBER;
+		// 28
+		instanceFieldRef byte[] User/S3;
+		// 29
+		instanceFieldRef byte[] User/S2_PRIM;
+		// 30
+		instanceFieldRef short User/IdentitySize;
+		// 31
+		instanceFieldRef byte[] User/message_registration;
+		// 32
+		instanceFieldRef byte[] User/SK;
+		// 33
+		instanceFieldRef byte[] User/M2_N1;
+		// 34
+		instanceFieldRef byte[] User/P;
+		// 35
+		instanceFieldRef User User$Biometrics/this$0;
+		// 36
+		instanceFieldRef short User$Biometrics/index;
+		// 37
+		instanceFieldRef short User$Biometrics/size;
+		// 38
+		instanceFieldRef byte[] User/Identity;
+		// 39
+		instanceFieldRef byte[] User/HASH_R;
+		// 40
+		instanceFieldRef byte[] User/M1;
+		// 41
+		instanceFieldRef byte[] User/BUFFER;
+		// 42
+		instanceFieldRef byte[] User/BUFFER2;
+		// 43
+		instanceFieldRef byte[] User/N1;
+		// 44
+		instanceFieldRef short User/index_buffer;
+		// 45
+		instanceFieldRef byte[] User/GROUP_P;
+		// 46
+		instanceFieldRef MemoryManager User/manager;
+		// 47
+		instanceFieldRef 3.1 User/rsa;
+		// 48
+		instanceFieldRef 2.8 User/mRsaPublicKeyModPow;
+		// 49
+		instanceFieldRef UserInput$Biometrics UserInput/challange_biometric;
+		// 50
+		instanceFieldRef byte[] UserInput$Biometrics/Biometrics;
+		// 51
+		instanceFieldRef byte[] UserInput/R_PRIM;
+		// 52
+		instanceFieldRef byte[] UserInput/Password;
+		// 53
+		instanceFieldRef short UserInput/PasswordSize;
+		// 54
+		instanceFieldRef short UserInput/IdentitySize;
+		// 55
+		instanceFieldRef byte[] UserInput/Identity;
+		// 56
+		instanceFieldRef UserInput UserInput$Biometrics/this$0;
+		// 57
+		instanceFieldRef short UserInput$Biometrics/index;
+		// 58
+		instanceFieldRef short UserInput$Biometrics/size;
+		// 59
+		virtualMethodRef 1.10.8(SS)V;		// setOutgoingAndSend(SS)V
+		// 60
+		virtualMethodRef User/setIdentity([BSS)V;
+		// 61
+		virtualMethodRef User/updateBio([BSS)V;
+		// 62
+		virtualMethodRef FuzzyExtractor/generate_gf()V;
+		// 63
+		virtualMethodRef MemoryManager/getShortRam()[S;
+		// 64
+		virtualMethodRef MemoryManager/geByteRam()[B;
+		// 65
+		staticMethodRef 1.16.2([BS[BSS)S;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+		// 66
+		staticMethodRef 1.16.3([BSSB)S;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+		// 67
+		staticMethodRef 1.16.1([BS[BSS)S;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+		// 68
+		staticMethodRef FuzzyExtractor/getInstance()Lsid/FuzzyExtractor;;
+		// 69
+		staticMethodRef 1.16.5(BB)S;		// javacard/framework/Util.makeShort(BB)S
+		// 70
+		virtualMethodRef User/updateGaloisField([BSS)V;
+		// 71
+		virtualMethodRef User/createInstanceFuzzy()V;
+		// 72
+		staticFieldRef FuzzyExtractor FuzzyExtractor/p_Instance;
+		// 73
+		virtualMethodRef User/registration()[B;
+		// 74
+		classRef FuzzyExtractor;
+		// 75
+		virtualMethodRef User/receiveRegistrationResponse([BSSZ)V;
+		// 76
+		virtualMethodRef UserInput/setIdentity([BSS)V;
+		// 77
+		virtualMethodRef UserInput/setPassword([BSS)V;
+		// 78
+		virtualMethodRef UserInput/auth_update_Bio([BSS)V;
+		// 79
+		virtualMethodRef User/authetificate(Lsid/UserInput;)[B;
+		// 80
+		virtualMethodRef User/authetificate2([BSS)[B;
+		// 81
+		staticMethodRef FuzzyExtractor/<init>()V;
+		// 82
+		virtualMethodRef FuzzyExtractor/xor2([BS[BSSS)V;
+		// 83
+		virtualMethodRef FuzzyExtractor/createInstance()V;
+		// 84
+		staticMethodRef 2.14.0(B)Ljavacard/security/RandomData;;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+			.descriptor	Ljavacard/security/RandomData;	2.14;
+
+		// 85
+		virtualMethodRef FuzzyExtractor/decode([B)V;
+		// 86
+		virtualMethodRef 2.14.1([BSS)V;		// generateData([BSS)V
+		// 87
+		virtualMethodRef FuzzyExtractor/encode([B)[B;
+		// 88
+		virtualMethodRef FuzzyExtractor/xor([BS[BSS)V;
+		// 89
+		staticFieldRef MemoryManager MemoryManager/p_Instance;
+		// 90
+		classRef MemoryManager;
+		// 91
+		staticMethodRef MemoryManager/<init>()V;
+		// 92
+		staticMethodRef 1.8.13(SB)[B;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+		// 93
+		staticMethodRef 0.0.0()V;		// java/lang/Object.<init>()V
+		// 94
+		staticMethodRef 1.8.15(SB)[S;		// javacard/framework/JCSystem.makeTransientShortArray(SB)[S
+		// 95
+		staticMethodRef MemoryManager/getInstance()Lsid/MemoryManager;;
+		// 96
+		staticMethodRef 1.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 97
+		classRef ProiectLicentaBio;
+		// 98
+		classRef User$Biometrics;
+		// 99
+		staticMethodRef User$Biometrics/<init>(Lsid/User;)V;
+		// 100
+		staticFieldRef FuzzyExtractor User/p_InstanceFuzzy;
+		// 101
+		staticMethodRef ProiectLicentaBio/<init>()V;
+		// 102
+		staticMethodRef 3.1.0(BZ)Ljavacardx/crypto/Cipher;;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+			.descriptor	Ljavacardx/crypto/Cipher;	3.1;
+
+		// 103
+		virtualMethodRef 1.3.1()V;		// register()V
+		// 104
+		staticMethodRef 2.13.0(BSZ)Ljavacard/security/Key;;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+			.descriptor	Ljavacard/security/Key;	2.0;
+
+		// 105
+		classRef 2.8;		// javacard/security/RSAPrivateKey
+		// 106
+		virtualMethodRef 1.10.1()[B;		// getBuffer()[B
+		// 107
+		staticFieldRef User User/p_Instance;
+		// 108
+		classRef User;
+		// 109
+		staticMethodRef User/<init>()V;
+		// 110
+		staticMethodRef 2.11.0(BZ)Ljavacard/security/MessageDigest;;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+			.descriptor	Ljavacard/security/MessageDigest;	2.11;
+
+		// 111
+		virtualMethodRef 2.11.1([BSS[BS)S;		// doFinal([BSS[BS)S
+		// 112
+		staticMethodRef 1.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 113
+		virtualMethodRef 1.10.6()S;		// setIncomingAndReceive()S
+		// 114
+		virtualMethodRef FuzzyExtractor/makeFuzzy([B[B)[B;
+		// 115
+		staticMethodRef ProiectLicentaBio/processBiometrics(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 116
+		staticMethodRef 1.16.0([BS[BSS)B;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+		// 117
+		staticMethodRef ProiectLicentaBio/testMode(Ljavacard/framework/APDU;)V;
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+		// 118
+		virtualMethodRef 1.10.3(S)S;		// receiveBytes(S)S
+		// 119
+		virtualMethodRef 3.1.3(Ljavacard/security/Key;B)V;		// init(Ljavacard/security/Key;B)V
+			.descriptor	Ljavacard/security/Key;	2.0;
+
+		// 120
+		staticMethodRef User/getInstance()Lsid/User;;
+		// 121
+		virtualMethodRef 3.1.1([BSS[BS)S;		// doFinal([BSS[BS)S
+		// 122
+		staticMethodRef UserInput/getInstance()Lsid/UserInput;;
+		// 123
+		virtualMethodRef User/setPassword([BSS)V;
+		// 124
+		staticFieldRef MemoryManager FuzzyExtractor/p_Memory;
+		// 125
+		virtualMethodRef FuzzyExtractor/precomputeInput()V;
+		// 126
+		classRef UserInput$Biometrics;
+		// 127
+		staticMethodRef UserInput$Biometrics/<init>(Lsid/UserInput;)V;
+		// 128
+		staticFieldRef UserInput UserInput/p_Instance;
+		// 129
+		classRef UserInput;
+		// 130
+		staticMethodRef UserInput/<init>()V;
+	}
+
+	.interface public abstract IConsts 0 {
+
+		.fields {
+			public static final byte UNTOUCHED_VALUE = 2;		// B
+			public static final byte TRUE = 1;		// B
+			public static final byte FALSE = 3;		// B
+			public static final byte OFFSET_START = 0;		// B
+			public static final short INVALID_DATA_LENGTH = -1;		// S
+			public static final byte OFFSET_CLA_APPLICATION = 0;		// B
+			public static final byte OFFSET_INS_LIGHT = 17;		// B
+			public static final byte OFFSET_INS_SYSTEM = 33;		// B
+			public static final byte OFFSET_INS_UPROVE = 34;		// B
+			public static final byte OFFSET_INS_TEST = 35;		// B
+			public static final byte OFFSET_INS_HASH = 36;		// B
+			public static final byte OFFSET_INS_BIOMETRIC = 37;		// B
+			public static final byte OFFSET_P1_ENC = 33;		// B
+			public static final byte OFFSET_P1_DEC = 34;		// B
+			public static final byte OFFSET_P1_GEN = 35;		// B
+			public static final byte OFFSET_P1_CHAIN_BIO = 36;		// B
+			public static final byte OFFSET_P1_SET_PASSWORD = 37;		// B
+			public static final byte OFFSET_P1_SET_IDENTITY = 38;		// B
+			public static final byte OFFSET_P1_REGISTRATION = 39;		// B
+			public static final byte OFFSET_PI_ADDITIONAL_DATA = 40;		// B
+			public static final byte OFFSET_PI_SECOND_MESSAGE = 41;		// B
+			public static final byte OFFSET_P1_REGISTRATION_MESSAGE = 51;		// B
+			public static final byte OFFSET_P1_AUTH_PASSWORD = 48;		// B
+			public static final byte OFFSET_P1_AUTH_IDENTITY = 49;		// B
+			public static final byte OFFSET_P1_CHAIN_AUTH = 50;		// B
+			public static final byte OFFSET_P1_AUTH_FIRST_STEP = 52;		// B
+			public static final byte OFFSET_P1_AUTH_SECOND_STEP = 53;		// B
+			public static final byte OFFSET_P1_GET_PASSWORD = 64;		// B
+			public static final byte OFFSET_P1_GET_IDENTITY = 65;		// B
+			public static final byte OFFSET_P1_GET_ADITIONAL_FIELDS = 66;		// B
+			public static final byte OFFSET_P1_GET_BIO = 67;		// B
+			public static final byte OFFSET_P1_GET_P = 68;		// B
+			public static final byte OFFSET_P1_GET_Q = 69;		// B
+			public static final byte OFFSET_P1_GET_S3 = 70;		// B
+			public static final byte OFFSET_P1_GET_S1 = 71;		// B
+			public static final byte OFFSET_P1_GET_SK = 72;		// B
+			public static final byte OFFSET_P1_GET_M2_N1 = 73;		// B
+			public static final byte OFFSET_P2_LAST_FRAGMENT = 1;		// B
+			public static final byte OFFSET_P2_MORE_FRAGMENTS = 0;		// B
+			public static final byte OFFSET_P2_CONFIG_DATA = 39;		// B
+			public static final byte OFFSET_P2_GALOIS_FIELD = 40;		// B
+			public static final byte OFFSET_P2_COMPUTE = 41;		// B
+			public static final byte BIOMETRIC_INFO = 117;		// B
+		}
+
+	}
+
+	.class public FuzzyExtractor 1 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			public short M 0;		// S
+			public short T 1;		// S
+			public short D 2;		// S
+			public short LENGTH 3;		// S
+			public short n 4;		// S
+			public short k 5;		// S
+			public short[] P 6;		// [S
+			public short[] ALPHA_TO 7;		// [S
+			public byte[] ENCODED_DATA 8;		// [B
+			public short[] INDEX_OF 9;		// [S
+			public short[] elp 10;		// [S
+			public byte[] l 11;		// [B
+			public short[] u_lu 12;		// [S
+			public short[] s 13;		// [S
+			public short[] root 14;		// [S
+			public short[] loc 15;		// [S
+			public short[] error 16;		// [S
+			public short[] reg 17;		// [S
+			public byte[] temp 18;		// [B
+			public final short[] Galois 19;		// [S
+			private static FuzzyExtractor p_Instance;		// Lsid/FuzzyExtractor;
+			private static MemoryManager p_Memory;		// Lsid/MemoryManager;
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			createInstance()V;
+			precomputeInput()V;
+			generate_gf()V;
+			decode([B)V;
+		}
+
+		.packageMethodTable 0 {
+			xor([BS[BSS)V;
+			xor2([BS[BSSS)V;
+			encode([B)[B;
+			makeFuzzy([B[B)[B;
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface IConsts { 
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 93;		// java/lang/Object.<init>()V
+					aload_0;
+					bspush 9;
+					putfield_s 0;		// short sid/FuzzyExtractor.M
+					aload_0;
+					bspush 52;
+					putfield_s 1;		// short sid/FuzzyExtractor.T
+					aload_0;
+					sconst_2;
+					getfield_s_this 1;		// short sid/FuzzyExtractor.T
+					smul;
+					sconst_1;
+					sadd;
+					putfield_s 2;		// short sid/FuzzyExtractor.D
+					aload_0;
+					sspush 384;
+					putfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					aload_0;
+					bspush 15;
+					newarray 12;
+					putfield_a 4;		// reference sid/FuzzyExtractor.P
+					aload_0;
+					sspush 512;
+					newarray 12;
+					putfield_a 5;		// reference sid/FuzzyExtractor.ALPHA_TO
+					aload_0;
+					sspush 512;
+					newarray 11;
+					putfield_a 6;		// reference sid/FuzzyExtractor.ENCODED_DATA
+					aload_0;
+					sspush 512;
+					newarray 12;
+					putfield_a 7;		// reference sid/FuzzyExtractor.INDEX_OF
+					aload_0;
+					sspush 16384;
+					newarray 12;
+					putfield_a 8;		// reference sid/FuzzyExtractor.elp
+					aload_0;
+					sspush 256;
+					newarray 11;
+					putfield_a 9;		// reference sid/FuzzyExtractor.l
+					aload_0;
+					sspush 256;
+					newarray 12;
+					putfield_a 10;		// reference sid/FuzzyExtractor.u_lu
+					aload_0;
+					sspush 256;
+					newarray 12;
+					putfield_a 11;		// reference sid/FuzzyExtractor.s
+					aload_0;
+					sspush 256;
+					newarray 12;
+					putfield_a 12;		// reference sid/FuzzyExtractor.root
+					aload_0;
+					sspush 256;
+					newarray 12;
+					putfield_a 13;		// reference sid/FuzzyExtractor.loc
+					aload_0;
+					sspush 256;
+					newarray 12;
+					putfield_a 14;		// reference sid/FuzzyExtractor.error
+					aload_0;
+					sspush 256;
+					newarray 12;
+					putfield_a 15;		// reference sid/FuzzyExtractor.reg
+					aload_0;
+					sspush 512;
+					newarray 11;
+					putfield_a 16;		// reference sid/FuzzyExtractor.temp
+					aload_0;
+					sspush 511;
+					putfield_s 17;		// short sid/FuzzyExtractor.n
+					aload_0;
+					bspush 23;
+					putfield_s 18;		// short sid/FuzzyExtractor.k
+					aload_0;
+					sspush 364;
+					newarray 12;
+					dup;
+					sconst_0;
+					sconst_1;
+					sastore;
+					dup;
+					sconst_1;
+					sspush 406;
+					sastore;
+					dup;
+					sconst_2;
+					sspush 440;
+					sastore;
+					dup;
+					sconst_3;
+					bspush 119;
+					sastore;
+					dup;
+					sconst_4;
+					sspush 250;
+					sastore;
+					dup;
+					sconst_5;
+					sspush 474;
+					sastore;
+					dup;
+					bspush 6;
+					sspush 302;
+					sastore;
+					dup;
+					bspush 7;
+					bspush 37;
+					sastore;
+					dup;
+					bspush 8;
+					bspush 125;
+					sastore;
+					dup;
+					bspush 9;
+					bspush 31;
+					sastore;
+					dup;
+					bspush 10;
+					sspush 370;
+					sastore;
+					dup;
+					bspush 11;
+					sspush 503;
+					sastore;
+					dup;
+					bspush 12;
+					sspush 443;
+					sastore;
+					dup;
+					bspush 13;
+					sspush 492;
+					sastore;
+					dup;
+					bspush 14;
+					sspush 385;
+					sastore;
+					dup;
+					bspush 15;
+					sspush 302;
+					sastore;
+					dup;
+					bspush 16;
+					sspush 168;
+					sastore;
+					dup;
+					bspush 17;
+					bspush 28;
+					sastore;
+					dup;
+					bspush 18;
+					sspush 178;
+					sastore;
+					dup;
+					bspush 19;
+					bspush 108;
+					sastore;
+					dup;
+					bspush 20;
+					sspush 403;
+					sastore;
+					dup;
+					bspush 21;
+					sspush 164;
+					sastore;
+					dup;
+					bspush 22;
+					sspush 367;
+					sastore;
+					dup;
+					bspush 23;
+					sspush 438;
+					sastore;
+					dup;
+					bspush 24;
+					bspush 46;
+					sastore;
+					dup;
+					bspush 25;
+					sspush 344;
+					sastore;
+					dup;
+					bspush 26;
+					bspush 64;
+					sastore;
+					dup;
+					bspush 27;
+					bspush 38;
+					sastore;
+					dup;
+					bspush 28;
+					sspush 370;
+					sastore;
+					dup;
+					bspush 29;
+					sspush 206;
+					sastore;
+					dup;
+					bspush 30;
+					sspush 257;
+					sastore;
+					dup;
+					bspush 31;
+					bspush 101;
+					sastore;
+					dup;
+					bspush 32;
+					sspush 153;
+					sastore;
+					dup;
+					bspush 33;
+					bspush 96;
+					sastore;
+					dup;
+					bspush 34;
+					sspush 144;
+					sastore;
+					dup;
+					bspush 35;
+					sspush 372;
+					sastore;
+					dup;
+					bspush 36;
+					sspush 153;
+					sastore;
+					dup;
+					bspush 37;
+					sspush 219;
+					sastore;
+					dup;
+					bspush 38;
+					sspush 223;
+					sastore;
+					dup;
+					bspush 39;
+					sspush 141;
+					sastore;
+					dup;
+					bspush 40;
+					sspush 462;
+					sastore;
+					dup;
+					bspush 41;
+					sconst_3;
+					sastore;
+					dup;
+					bspush 42;
+					sspush 164;
+					sastore;
+					dup;
+					bspush 43;
+					bspush 12;
+					sastore;
+					dup;
+					bspush 44;
+					sspush 481;
+					sastore;
+					dup;
+					bspush 45;
+					sspush 181;
+					sastore;
+					dup;
+					bspush 46;
+					sspush 399;
+					sastore;
+					dup;
+					bspush 47;
+					sspush 167;
+					sastore;
+					dup;
+					bspush 48;
+					sspush 342;
+					sastore;
+					dup;
+					bspush 49;
+					sspush 340;
+					sastore;
+					dup;
+					bspush 50;
+					sspush 503;
+					sastore;
+					dup;
+					bspush 51;
+					sspush 286;
+					sastore;
+					dup;
+					bspush 52;
+					bspush 26;
+					sastore;
+					dup;
+					bspush 53;
+					sspush 373;
+					sastore;
+					dup;
+					bspush 54;
+					bspush 26;
+					sastore;
+					dup;
+					bspush 55;
+					sspush 164;
+					sastore;
+					dup;
+					bspush 56;
+					bspush 88;
+					sastore;
+					dup;
+					bspush 57;
+					sspush 209;
+					sastore;
+					dup;
+					bspush 58;
+					bspush 43;
+					sastore;
+					dup;
+					bspush 59;
+					bspush 40;
+					sastore;
+					dup;
+					bspush 60;
+					bspush 69;
+					sastore;
+					dup;
+					bspush 61;
+					sspush 435;
+					sastore;
+					dup;
+					bspush 62;
+					sspush 224;
+					sastore;
+					dup;
+					bspush 63;
+					sspush 211;
+					sastore;
+					dup;
+					bspush 64;
+					sspush 438;
+					sastore;
+					dup;
+					bspush 65;
+					bspush 125;
+					sastore;
+					dup;
+					bspush 66;
+					bspush 34;
+					sastore;
+					dup;
+					bspush 67;
+					sspush 380;
+					sastore;
+					dup;
+					bspush 68;
+					sspush 233;
+					sastore;
+					dup;
+					bspush 69;
+					sspush 325;
+					sastore;
+					dup;
+					bspush 70;
+					sspush 129;
+					sastore;
+					dup;
+					bspush 71;
+					sspush 445;
+					sastore;
+					dup;
+					bspush 72;
+					sspush 153;
+					sastore;
+					dup;
+					bspush 73;
+					sspush 271;
+					sastore;
+					dup;
+					bspush 74;
+					sspush 437;
+					sastore;
+					dup;
+					bspush 75;
+					sspush 443;
+					sastore;
+					dup;
+					bspush 76;
+					sspush 479;
+					sastore;
+					dup;
+					bspush 77;
+					sspush 435;
+					sastore;
+					dup;
+					bspush 78;
+					sspush 152;
+					sastore;
+					dup;
+					bspush 79;
+					bspush 75;
+					sastore;
+					dup;
+					bspush 80;
+					bspush 38;
+					sastore;
+					dup;
+					bspush 81;
+					sspush 325;
+					sastore;
+					dup;
+					bspush 82;
+					sspush 421;
+					sastore;
+					dup;
+					bspush 83;
+					sspush 402;
+					sastore;
+					dup;
+					bspush 84;
+					sspush 253;
+					sastore;
+					dup;
+					bspush 85;
+					bspush 35;
+					sastore;
+					dup;
+					bspush 86;
+					sspush 269;
+					sastore;
+					dup;
+					bspush 87;
+					bspush 101;
+					sastore;
+					dup;
+					bspush 88;
+					bspush 44;
+					sastore;
+					dup;
+					bspush 89;
+					sspush 247;
+					sastore;
+					dup;
+					bspush 90;
+					bspush 32;
+					sastore;
+					dup;
+					bspush 91;
+					sspush 172;
+					sastore;
+					dup;
+					bspush 92;
+					sspush 244;
+					sastore;
+					dup;
+					bspush 93;
+					sspush 142;
+					sastore;
+					dup;
+					bspush 94;
+					bspush 84;
+					sastore;
+					dup;
+					bspush 95;
+					sspush 213;
+					sastore;
+					dup;
+					bspush 96;
+					sspush 129;
+					sastore;
+					dup;
+					bspush 97;
+					sspush 436;
+					sastore;
+					dup;
+					bspush 98;
+					sspush 315;
+					sastore;
+					dup;
+					bspush 99;
+					sspush 237;
+					sastore;
+					dup;
+					bspush 100;
+					sspush 201;
+					sastore;
+					dup;
+					bspush 101;
+					sspush 156;
+					sastore;
+					dup;
+					bspush 102;
+					sspush 217;
+					sastore;
+					dup;
+					bspush 103;
+					sspush 345;
+					sastore;
+					dup;
+					bspush 104;
+					sspush 291;
+					sastore;
+					dup;
+					bspush 105;
+					sspush 280;
+					sastore;
+					dup;
+					bspush 106;
+					sconst_5;
+					sastore;
+					dup;
+					bspush 107;
+					sspush 143;
+					sastore;
+					dup;
+					bspush 108;
+					bspush 118;
+					sastore;
+					dup;
+					bspush 109;
+					sspush 205;
+					sastore;
+					dup;
+					bspush 110;
+					sspush 333;
+					sastore;
+					dup;
+					bspush 111;
+					sspush 474;
+					sastore;
+					dup;
+					bspush 112;
+					sspush 200;
+					sastore;
+					dup;
+					bspush 113;
+					sspush 410;
+					sastore;
+					dup;
+					bspush 114;
+					bspush 36;
+					sastore;
+					dup;
+					bspush 115;
+					sspush 478;
+					sastore;
+					dup;
+					bspush 116;
+					sspush 503;
+					sastore;
+					dup;
+					bspush 117;
+					sspush 346;
+					sastore;
+					dup;
+					bspush 118;
+					sspush 440;
+					sastore;
+					dup;
+					bspush 119;
+					bspush 105;
+					sastore;
+					dup;
+					bspush 120;
+					sspush 484;
+					sastore;
+					dup;
+					bspush 121;
+					sspush 166;
+					sastore;
+					dup;
+					bspush 122;
+					sspush 231;
+					sastore;
+					dup;
+					bspush 123;
+					bspush 36;
+					sastore;
+					dup;
+					bspush 124;
+					bspush 24;
+					sastore;
+					dup;
+					bspush 125;
+					bspush 51;
+					sastore;
+					dup;
+					bspush 126;
+					sspush 336;
+					sastore;
+					dup;
+					bspush 127;
+					sspush 360;
+					sastore;
+					dup;
+					sspush 128;
+					sspush 185;
+					sastore;
+					dup;
+					sspush 129;
+					sspush 511;
+					sastore;
+					dup;
+					sspush 130;
+					bspush 118;
+					sastore;
+					dup;
+					sspush 131;
+					sspush 342;
+					sastore;
+					dup;
+					sspush 132;
+					sspush 361;
+					sastore;
+					dup;
+					sspush 133;
+					sspush 428;
+					sastore;
+					dup;
+					sspush 134;
+					sspush 452;
+					sastore;
+					dup;
+					sspush 135;
+					sspush 351;
+					sastore;
+					dup;
+					sspush 136;
+					bspush 115;
+					sastore;
+					dup;
+					sspush 137;
+					sspush 234;
+					sastore;
+					dup;
+					sspush 138;
+					sspush 191;
+					sastore;
+					dup;
+					sspush 139;
+					sspush 266;
+					sastore;
+					dup;
+					sspush 140;
+					sspush 474;
+					sastore;
+					dup;
+					sspush 141;
+					sspush 228;
+					sastore;
+					dup;
+					sspush 142;
+					sspush 354;
+					sastore;
+					dup;
+					sspush 143;
+					bspush 106;
+					sastore;
+					dup;
+					sspush 144;
+					sspush 249;
+					sastore;
+					dup;
+					sspush 145;
+					sspush 263;
+					sastore;
+					dup;
+					sspush 146;
+					sspush 308;
+					sastore;
+					dup;
+					sspush 147;
+					sspush 341;
+					sastore;
+					dup;
+					sspush 148;
+					sspush 281;
+					sastore;
+					dup;
+					sspush 149;
+					sspush 146;
+					sastore;
+					dup;
+					sspush 150;
+					bspush 43;
+					sastore;
+					dup;
+					sspush 151;
+					sspush 497;
+					sastore;
+					dup;
+					sspush 152;
+					sspush 216;
+					sastore;
+					dup;
+					sspush 153;
+					sspush 410;
+					sastore;
+					dup;
+					sspush 154;
+					bspush 108;
+					sastore;
+					dup;
+					sspush 155;
+					bspush 72;
+					sastore;
+					dup;
+					sspush 156;
+					sspush 477;
+					sastore;
+					dup;
+					sspush 157;
+					bspush 67;
+					sastore;
+					dup;
+					sspush 158;
+					sspush 441;
+					sastore;
+					dup;
+					sspush 159;
+					sspush 250;
+					sastore;
+					dup;
+					sspush 160;
+					bspush 89;
+					sastore;
+					dup;
+					sspush 161;
+					sspush 427;
+					sastore;
+					dup;
+					sspush 162;
+					bspush 30;
+					sastore;
+					dup;
+					sspush 163;
+					sspush 491;
+					sastore;
+					dup;
+					sspush 164;
+					sspush 228;
+					sastore;
+					dup;
+					sspush 165;
+					sspush 251;
+					sastore;
+					dup;
+					sspush 166;
+					bspush 79;
+					sastore;
+					dup;
+					sspush 167;
+					bspush 13;
+					sastore;
+					dup;
+					sspush 168;
+					bspush 77;
+					sastore;
+					dup;
+					sspush 169;
+					sspush 342;
+					sastore;
+					dup;
+					sspush 170;
+					bspush 101;
+					sastore;
+					dup;
+					sspush 171;
+					bspush 26;
+					sastore;
+					dup;
+					sspush 172;
+					sspush 450;
+					sastore;
+					dup;
+					sspush 173;
+					bspush 16;
+					sastore;
+					dup;
+					sspush 174;
+					sspush 336;
+					sastore;
+					dup;
+					sspush 175;
+					sspush 393;
+					sastore;
+					dup;
+					sspush 176;
+					sspush 174;
+					sastore;
+					dup;
+					sspush 177;
+					sspush 230;
+					sastore;
+					dup;
+					sspush 178;
+					sspush 334;
+					sastore;
+					dup;
+					sspush 179;
+					sspush 403;
+					sastore;
+					dup;
+					sspush 180;
+					sspush 168;
+					sastore;
+					dup;
+					sspush 181;
+					bspush 60;
+					sastore;
+					dup;
+					sspush 182;
+					sspush 398;
+					sastore;
+					dup;
+					sspush 183;
+					sspush 297;
+					sastore;
+					dup;
+					sspush 184;
+					sspush 156;
+					sastore;
+					dup;
+					sspush 185;
+					sspush 362;
+					sastore;
+					dup;
+					sspush 186;
+					sspush 468;
+					sastore;
+					dup;
+					sspush 187;
+					sspush 201;
+					sastore;
+					dup;
+					sspush 188;
+					sspush 185;
+					sastore;
+					dup;
+					sspush 189;
+					sspush 234;
+					sastore;
+					dup;
+					sspush 190;
+					sspush 150;
+					sastore;
+					dup;
+					sspush 191;
+					sspush 476;
+					sastore;
+					dup;
+					sspush 192;
+					sspush 408;
+					sastore;
+					dup;
+					sspush 193;
+					sspush 232;
+					sastore;
+					dup;
+					sspush 194;
+					bspush 125;
+					sastore;
+					dup;
+					sspush 195;
+					sspush 408;
+					sastore;
+					dup;
+					sspush 196;
+					sspush 150;
+					sastore;
+					dup;
+					sspush 197;
+					sspush 486;
+					sastore;
+					dup;
+					sspush 198;
+					sspush 140;
+					sastore;
+					dup;
+					sspush 199;
+					sspush 445;
+					sastore;
+					dup;
+					sspush 200;
+					sspush 367;
+					sastore;
+					dup;
+					sspush 201;
+					bspush 46;
+					sastore;
+					dup;
+					sspush 202;
+					sspush 311;
+					sastore;
+					dup;
+					sspush 203;
+					sspush 458;
+					sastore;
+					dup;
+					sspush 204;
+					sspush 200;
+					sastore;
+					dup;
+					sspush 205;
+					sspush 382;
+					sastore;
+					dup;
+					sspush 206;
+					sspush 435;
+					sastore;
+					dup;
+					sspush 207;
+					sspush 314;
+					sastore;
+					dup;
+					sspush 208;
+					sspush 186;
+					sastore;
+					dup;
+					sspush 209;
+					sspush 194;
+					sastore;
+					dup;
+					sspush 210;
+					sspush 429;
+					sastore;
+					dup;
+					sspush 211;
+					sspush 156;
+					sastore;
+					dup;
+					sspush 212;
+					sspush 159;
+					sastore;
+					dup;
+					sspush 213;
+					sspush 444;
+					sastore;
+					dup;
+					sspush 214;
+					sspush 262;
+					sastore;
+					dup;
+					sspush 215;
+					sspush 436;
+					sastore;
+					dup;
+					sspush 216;
+					sspush 276;
+					sastore;
+					dup;
+					sspush 217;
+					sspush 257;
+					sastore;
+					dup;
+					sspush 218;
+					sspush 264;
+					sastore;
+					dup;
+					sspush 219;
+					sspush 425;
+					sastore;
+					dup;
+					sspush 220;
+					sspush 353;
+					sastore;
+					dup;
+					sspush 221;
+					sspush 366;
+					sastore;
+					dup;
+					sspush 222;
+					sspush 301;
+					sastore;
+					dup;
+					sspush 223;
+					sspush 435;
+					sastore;
+					dup;
+					sspush 224;
+					bspush 126;
+					sastore;
+					dup;
+					sspush 225;
+					sspush 445;
+					sastore;
+					dup;
+					sspush 226;
+					sspush 181;
+					sastore;
+					dup;
+					sspush 227;
+					bspush 19;
+					sastore;
+					dup;
+					sspush 228;
+					sspush 379;
+					sastore;
+					dup;
+					sspush 229;
+					sspush 341;
+					sastore;
+					dup;
+					sspush 230;
+					sspush 338;
+					sastore;
+					dup;
+					sspush 231;
+					sspush 136;
+					sastore;
+					dup;
+					sspush 232;
+					sspush 268;
+					sastore;
+					dup;
+					sspush 233;
+					sspush 206;
+					sastore;
+					dup;
+					sspush 234;
+					sspush 397;
+					sastore;
+					dup;
+					sspush 235;
+					sspush 393;
+					sastore;
+					dup;
+					sspush 236;
+					sspush 511;
+					sastore;
+					dup;
+					sspush 237;
+					sspush 170;
+					sastore;
+					dup;
+					sspush 238;
+					sspush 486;
+					sastore;
+					dup;
+					sspush 239;
+					sspush 342;
+					sastore;
+					dup;
+					sspush 240;
+					sspush 479;
+					sastore;
+					dup;
+					sspush 241;
+					bspush 104;
+					sastore;
+					dup;
+					sspush 242;
+					sspush 423;
+					sastore;
+					dup;
+					sspush 243;
+					bspush 20;
+					sastore;
+					dup;
+					sspush 244;
+					sspush 429;
+					sastore;
+					dup;
+					sspush 245;
+					bspush 111;
+					sastore;
+					dup;
+					sspush 246;
+					sspush 342;
+					sastore;
+					dup;
+					sspush 247;
+					sspush 193;
+					sastore;
+					dup;
+					sspush 248;
+					bspush 94;
+					sastore;
+					dup;
+					sspush 249;
+					sspush 251;
+					sastore;
+					dup;
+					sspush 250;
+					sspush 318;
+					sastore;
+					dup;
+					sspush 251;
+					sconst_2;
+					sastore;
+					dup;
+					sspush 252;
+					bspush 127;
+					sastore;
+					dup;
+					sspush 253;
+					sspush 337;
+					sastore;
+					dup;
+					sspush 254;
+					bspush 125;
+					sastore;
+					dup;
+					sspush 255;
+					sspush 472;
+					sastore;
+					dup;
+					sspush 256;
+					bspush 106;
+					sastore;
+					dup;
+					sspush 257;
+					bspush 83;
+					sastore;
+					dup;
+					sspush 258;
+					sspush 204;
+					sastore;
+					dup;
+					sspush 259;
+					sspush 378;
+					sastore;
+					dup;
+					sspush 260;
+					sspush 191;
+					sastore;
+					dup;
+					sspush 261;
+					sconst_2;
+					sastore;
+					dup;
+					sspush 262;
+					sspush 154;
+					sastore;
+					dup;
+					sspush 263;
+					bspush 38;
+					sastore;
+					dup;
+					sspush 264;
+					sspush 129;
+					sastore;
+					dup;
+					sspush 265;
+					bspush 82;
+					sastore;
+					dup;
+					sspush 266;
+					sspush 391;
+					sastore;
+					dup;
+					sspush 267;
+					sspush 391;
+					sastore;
+					dup;
+					sspush 268;
+					sconst_1;
+					sastore;
+					dup;
+					sspush 269;
+					sspush 335;
+					sastore;
+					dup;
+					sspush 270;
+					sspush 305;
+					sastore;
+					dup;
+					sspush 271;
+					sspush 233;
+					sastore;
+					dup;
+					sspush 272;
+					sspush 378;
+					sastore;
+					dup;
+					sspush 273;
+					sspush 145;
+					sastore;
+					dup;
+					sspush 274;
+					sspush 339;
+					sastore;
+					dup;
+					sspush 275;
+					bspush 61;
+					sastore;
+					dup;
+					sspush 276;
+					bspush 58;
+					sastore;
+					dup;
+					sspush 277;
+					bspush 125;
+					sastore;
+					dup;
+					sspush 278;
+					bspush 45;
+					sastore;
+					dup;
+					sspush 279;
+					sspush 387;
+					sastore;
+					dup;
+					sspush 280;
+					sspush 157;
+					sastore;
+					dup;
+					sspush 281;
+					sspush 306;
+					sastore;
+					dup;
+					sspush 282;
+					sspush 434;
+					sastore;
+					dup;
+					sspush 283;
+					bspush 51;
+					sastore;
+					dup;
+					sspush 284;
+					sconst_3;
+					sastore;
+					dup;
+					sspush 285;
+					sspush 452;
+					sastore;
+					dup;
+					sspush 286;
+					sspush 169;
+					sastore;
+					dup;
+					sspush 287;
+					sspush 142;
+					sastore;
+					dup;
+					sspush 288;
+					sspush 460;
+					sastore;
+					dup;
+					sspush 289;
+					sspush 351;
+					sastore;
+					dup;
+					sspush 290;
+					sspush 405;
+					sastore;
+					dup;
+					sspush 291;
+					sspush 501;
+					sastore;
+					dup;
+					sspush 292;
+					sspush 165;
+					sastore;
+					dup;
+					sspush 293;
+					sspush 251;
+					sastore;
+					dup;
+					sspush 294;
+					sspush 364;
+					sastore;
+					dup;
+					sspush 295;
+					bspush 71;
+					sastore;
+					dup;
+					sspush 296;
+					sspush 409;
+					sastore;
+					dup;
+					sspush 297;
+					sspush 342;
+					sastore;
+					dup;
+					sspush 298;
+					sspush 411;
+					sastore;
+					dup;
+					sspush 299;
+					sspush 359;
+					sastore;
+					dup;
+					sspush 300;
+					sspush 471;
+					sastore;
+					dup;
+					sspush 301;
+					sspush 457;
+					sastore;
+					dup;
+					sspush 302;
+					sspush 210;
+					sastore;
+					dup;
+					sspush 303;
+					bspush 92;
+					sastore;
+					dup;
+					sspush 304;
+					sspush 167;
+					sastore;
+					dup;
+					sspush 305;
+					sspush 316;
+					sastore;
+					dup;
+					sspush 306;
+					sspush 293;
+					sastore;
+					dup;
+					sspush 307;
+					sspush 447;
+					sastore;
+					dup;
+					sspush 308;
+					bspush 95;
+					sastore;
+					dup;
+					sspush 309;
+					sspush 322;
+					sastore;
+					dup;
+					sspush 310;
+					sspush 317;
+					sastore;
+					dup;
+					sspush 311;
+					sspush 239;
+					sastore;
+					dup;
+					sspush 312;
+					sspush 149;
+					sastore;
+					dup;
+					sspush 313;
+					sspush 289;
+					sastore;
+					dup;
+					sspush 314;
+					bspush 72;
+					sastore;
+					dup;
+					sspush 315;
+					sspush 313;
+					sastore;
+					dup;
+					sspush 316;
+					sspush 404;
+					sastore;
+					dup;
+					sspush 317;
+					sspush 210;
+					sastore;
+					dup;
+					sspush 318;
+					sspush 439;
+					sastore;
+					dup;
+					sspush 319;
+					bspush 6;
+					sastore;
+					dup;
+					sspush 320;
+					sspush 509;
+					sastore;
+					dup;
+					sspush 321;
+					sspush 129;
+					sastore;
+					dup;
+					sspush 322;
+					bspush 40;
+					sastore;
+					dup;
+					sspush 323;
+					sspush 286;
+					sastore;
+					dup;
+					sspush 324;
+					sspush 135;
+					sastore;
+					dup;
+					sspush 325;
+					bspush 68;
+					sastore;
+					dup;
+					sspush 326;
+					sspush 461;
+					sastore;
+					dup;
+					sspush 327;
+					sspush 225;
+					sastore;
+					dup;
+					sspush 328;
+					sspush 436;
+					sastore;
+					dup;
+					sspush 329;
+					sspush 511;
+					sastore;
+					dup;
+					sspush 330;
+					sspush 432;
+					sastore;
+					dup;
+					sspush 331;
+					sspush 270;
+					sastore;
+					dup;
+					sspush 332;
+					sspush 164;
+					sastore;
+					dup;
+					sspush 333;
+					sspush 204;
+					sastore;
+					dup;
+					sspush 334;
+					sspush 285;
+					sastore;
+					dup;
+					sspush 335;
+					sconst_5;
+					sastore;
+					dup;
+					sspush 336;
+					sspush 175;
+					sastore;
+					dup;
+					sspush 337;
+					sspush 411;
+					sastore;
+					dup;
+					sspush 338;
+					sspush 497;
+					sastore;
+					dup;
+					sspush 339;
+					sspush 199;
+					sastore;
+					dup;
+					sspush 340;
+					sspush 141;
+					sastore;
+					dup;
+					sspush 341;
+					sspush 201;
+					sastore;
+					dup;
+					sspush 342;
+					sspush 469;
+					sastore;
+					dup;
+					sspush 343;
+					sspush 270;
+					sastore;
+					dup;
+					sspush 344;
+					sspush 349;
+					sastore;
+					dup;
+					sspush 345;
+					sspush 191;
+					sastore;
+					dup;
+					sspush 346;
+					sspush 465;
+					sastore;
+					dup;
+					sspush 347;
+					sspush 303;
+					sastore;
+					dup;
+					sspush 348;
+					sspush 494;
+					sastore;
+					dup;
+					sspush 349;
+					sspush 343;
+					sastore;
+					dup;
+					sspush 350;
+					sspush 338;
+					sastore;
+					dup;
+					sspush 351;
+					bspush 101;
+					sastore;
+					dup;
+					sspush 352;
+					sspush 131;
+					sastore;
+					dup;
+					sspush 353;
+					sspush 266;
+					sastore;
+					dup;
+					sspush 354;
+					sspush 160;
+					sastore;
+					dup;
+					sspush 355;
+					bspush 107;
+					sastore;
+					dup;
+					sspush 356;
+					bspush 30;
+					sastore;
+					dup;
+					sspush 357;
+					bspush 77;
+					sastore;
+					dup;
+					sspush 358;
+					sspush 390;
+					sastore;
+					dup;
+					sspush 359;
+					sspush 474;
+					sastore;
+					dup;
+					sspush 360;
+					sspush 154;
+					sastore;
+					dup;
+					sspush 361;
+					sspush 155;
+					sastore;
+					dup;
+					sspush 363;
+					sconst_1;
+					sastore;
+					putfield_a 19;		// reference sid/FuzzyExtractor.Galois
+					return;
+		}
+
+		.method public createInstance()V 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	invokestatic 95;		// sid/MemoryManager.getInstance()Lsid/MemoryManager;
+					putstatic_a 124;		// reference sid/FuzzyExtractor.p_Memory
+					aload_0;
+					invokevirtual 125;		// precomputeInput()V
+					aload_0;
+					invokevirtual 62;		// generate_gf()V
+					return;
+		}
+
+		.method public precomputeInput()V 2 {
+			.stack 6;
+			.locals 1;
+
+				L0:	sconst_1;
+					sstore_1;
+					goto L2;
+				L1:	getfield_a_this 4;		// reference sid/FuzzyExtractor.P
+					sload_1;
+					sconst_0;
+					sastore;
+					sinc 1 1;
+				L2:	sload_1;
+					getfield_s_this 0;		// short sid/FuzzyExtractor.M
+					if_scmplt L1;
+				L3:	getfield_a_this 4;		// reference sid/FuzzyExtractor.P
+					sconst_0;
+					getfield_a_this 4;		// reference sid/FuzzyExtractor.P
+					getfield_s_this 0;		// short sid/FuzzyExtractor.M
+					sconst_1;
+					dup_x 19;
+					sastore;
+					sastore;
+					getfield_a_this 4;		// reference sid/FuzzyExtractor.P
+					sconst_1;
+					sconst_1;
+					sastore;
+					aload_0;
+					sconst_1;
+					putfield_s 17;		// short sid/FuzzyExtractor.n
+					sconst_0;
+					sstore_1;
+					goto L5;
+				L4:	aload_0;
+					dup;
+					getfield_s 17;		// short sid/FuzzyExtractor.n
+					sconst_2;
+					smul;
+					putfield_s 17;		// short sid/FuzzyExtractor.n
+					sinc 1 1;
+				L5:	sload_1;
+					getfield_s_this 0;		// short sid/FuzzyExtractor.M
+					if_scmple L4;
+				L6:	aload_0;
+					getfield_s_this 17;		// short sid/FuzzyExtractor.n
+					sconst_2;
+					sdiv;
+					sconst_1;
+					ssub;
+					putfield_s 17;		// short sid/FuzzyExtractor.n
+					return;
+		}
+
+		.method public generate_gf()V 3 {
+			.stack 6;
+			.locals 3;
+
+				L0:	getstatic_a 124;		// reference sid/FuzzyExtractor.p_Memory
+					invokevirtual 63;		// getShortRam()[S
+					astore_1;
+					sconst_1;
+					sstore_3;
+					aload_1;
+					getfield_s_this 0;		// short sid/FuzzyExtractor.M
+					sconst_0;
+					sastore;
+					sconst_1;
+					sstore_3;
+					aload_1;
+					getfield_s_this 0;		// short sid/FuzzyExtractor.M
+					sconst_0;
+					sastore;
+					sconst_0;
+					sstore_2;
+					goto L4;
+				L1:	aload_1;
+					sload_2;
+					sload_3;
+					sastore;
+					getfield_a_this 7;		// reference sid/FuzzyExtractor.INDEX_OF
+					aload_1;
+					sload_2;
+					saload;
+					sload_2;
+					sastore;
+					getfield_a_this 4;		// reference sid/FuzzyExtractor.P
+					sload_2;
+					saload;
+					ifeq L3;
+				L2:	aload_1;
+					getfield_s_this 0;		// short sid/FuzzyExtractor.M
+					dup2;
+					saload;
+					sload_3;
+					sxor;
+					sastore;
+				L3:	sload_3;
+					sconst_1;
+					sshl;
+					sstore_3;
+					sinc 2 1;
+				L4:	sload_2;
+					getfield_s_this 0;		// short sid/FuzzyExtractor.M
+					if_scmplt L1;
+				L5:	getfield_a_this 7;		// reference sid/FuzzyExtractor.INDEX_OF
+					aload_1;
+					getfield_s_this 0;		// short sid/FuzzyExtractor.M
+					saload;
+					getfield_s_this 0;		// short sid/FuzzyExtractor.M
+					sastore;
+					sload_3;
+					sconst_1;
+					sshr;
+					sstore_3;
+					getfield_s_this 0;		// short sid/FuzzyExtractor.M
+					sconst_1;
+					sadd;
+					sstore_2;
+					goto L10;
+				L6:	aload_1;
+					sload_2;
+					sconst_1;
+					ssub;
+					saload;
+					sload_3;
+					if_scmplt L8;
+				L7:	aload_1;
+					sload_2;
+					aload_1;
+					getfield_s_this 0;		// short sid/FuzzyExtractor.M
+					saload;
+					aload_1;
+					sload_2;
+					sconst_1;
+					ssub;
+					saload;
+					sload_3;
+					sxor;
+					sconst_1;
+					sshl;
+					sxor;
+					sastore;
+					goto L9;
+				L8:	aload_1;
+					sload_2;
+					aload_1;
+					sload_2;
+					sconst_1;
+					ssub;
+					saload;
+					sconst_1;
+					sshl;
+					sastore;
+				L9:	getfield_a_this 7;		// reference sid/FuzzyExtractor.INDEX_OF
+					aload_1;
+					sload_2;
+					saload;
+					sload_2;
+					sastore;
+					sinc 2 1;
+				L10:	sload_2;
+					getfield_s_this 17;		// short sid/FuzzyExtractor.n
+					if_scmplt L6;
+				L11:	getfield_a_this 7;		// reference sid/FuzzyExtractor.INDEX_OF
+					sconst_0;
+					sconst_m1;
+					sastore;
+					sconst_0;
+					sstore_2;
+					goto L13;
+				L12:	getfield_a_this 5;		// reference sid/FuzzyExtractor.ALPHA_TO
+					sload_2;
+					aload_1;
+					sload_2;
+					saload;
+					sastore;
+					sinc 2 1;
+				L13:	sload_2;
+					getfield_s_this 17;		// short sid/FuzzyExtractor.n
+					if_scmplt L12;
+				L14:	return;
+		}
+
+		.method  xor([BS[BSS)V 128 {
+			.stack 6;
+			.locals 2;
+
+				L0:	getstatic_a 124;		// reference sid/FuzzyExtractor.p_Memory
+					invokevirtual 64;		// geByteRam()[B
+					astore 6;
+					sconst_0;
+					sstore 7;
+					goto L2;
+				L1:	aload 6;
+					sload 7;
+					aload_1;
+					sload 7;
+					sload_2;
+					sadd;
+					baload;
+					aload_3;
+					sload 7;
+					sload 4;
+					sadd;
+					baload;
+					sxor;
+					bastore;
+					sinc 7 1;
+				L2:	sload 7;
+					sload 5;
+					if_scmplt L1;
+				L3:	aload 6;
+					sconst_0;
+					aload_1;
+					sconst_0;
+					sload 5;
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					return;
+		}
+
+		.method  xor2([BS[BSSS)V 129 {
+			.stack 6;
+			.locals 2;
+
+				L0:	getstatic_a 124;		// reference sid/FuzzyExtractor.p_Memory
+					invokevirtual 64;		// geByteRam()[B
+					astore 7;
+					sconst_0;
+					sstore 8;
+					goto L2;
+				L1:	aload 7;
+					sload 8;
+					aload_1;
+					sload 8;
+					sload_2;
+					sadd;
+					baload;
+					aload_3;
+					sload 8;
+					sload 4;
+					sadd;
+					baload;
+					sxor;
+					bastore;
+					sinc 8 1;
+				L2:	sload 8;
+					sload 5;
+					if_scmplt L1;
+				L3:	aload 7;
+					sconst_0;
+					getfield_a_this 16;		// reference sid/FuzzyExtractor.temp
+					sconst_0;
+					sload 5;
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					return;
+		}
+
+		.method  encode([B)[B 130 {
+			.stack 5;
+			.locals 8;
+
+				L0:	getstatic_a 124;		// reference sid/FuzzyExtractor.p_Memory
+					invokevirtual 64;		// geByteRam()[B
+					astore_2;
+					getfield_s_this 3;		// short sid/FuzzyExtractor.LENGTH
+					getfield_s_this 18;		// short sid/FuzzyExtractor.k
+					ssub;
+					sstore 6;
+					sload 6;
+					sconst_1;
+					ssub;
+					sstore 7;
+					getfield_s_this 18;		// short sid/FuzzyExtractor.k
+					sconst_1;
+					ssub;
+					sstore 8;
+					aload_2;
+					sconst_0;
+					sload 6;
+					sconst_0;
+					invokestatic 66;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					getfield_a_this 6;		// reference sid/FuzzyExtractor.ENCODED_DATA
+					sconst_0;
+					sspush 512;
+					sconst_0;
+					invokestatic 66;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					sload 8;
+					sstore_3;
+					goto L14;
+				L1:	aload_1;
+					sload_3;
+					baload;
+					aload_2;
+					sload 7;
+					baload;
+					sxor;
+					sstore 5;
+					sload 5;
+					ifeq L9;
+				L2:	sload 7;
+					sstore 4;
+					goto L7;
+				L3:	getfield_a_this 19;		// reference sid/FuzzyExtractor.Galois
+					sload 4;
+					saload;
+					ifeq L5;
+				L4:	aload_2;
+					sload 4;
+					aload_2;
+					sload 4;
+					sconst_1;
+					ssub;
+					baload;
+					sload 5;
+					sxor;
+					s2b;
+					bastore;
+					goto L6;
+				L5:	aload_2;
+					sload 4;
+					aload_2;
+					sload 4;
+					sconst_1;
+					ssub;
+					baload;
+					bastore;
+				L6:	sinc 4 -1;
+				L7:	sload 4;
+					ifgt L3;
+				L8:	aload_2;
+					sconst_0;
+					getfield_a_this 19;		// reference sid/FuzzyExtractor.Galois
+					sconst_0;
+					saload;
+					sload 5;
+					sand;
+					s2b;
+					bastore;
+					goto L13;
+				L9:	sload 7;
+					sstore 4;
+					goto L11;
+				L10:	aload_2;
+					sload 4;
+					aload_2;
+					sload 4;
+					sconst_1;
+					ssub;
+					baload;
+					bastore;
+					sinc 4 -1;
+				L11:	sload 4;
+					ifgt L10;
+				L12:	aload_2;
+					sconst_0;
+					sconst_0;
+					bastore;
+				L13:	sinc 3 -1;
+				L14:	sload_3;
+					ifge L1;
+				L15:	getfield_s_this 3;		// short sid/FuzzyExtractor.LENGTH
+					getfield_s_this 18;		// short sid/FuzzyExtractor.k
+					ssub;
+					sstore 9;
+					aload_2;
+					sconst_0;
+					getfield_a_this 6;		// reference sid/FuzzyExtractor.ENCODED_DATA
+					sconst_0;
+					sload 9;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_0;
+					getfield_a_this 6;		// reference sid/FuzzyExtractor.ENCODED_DATA
+					sload 9;
+					getfield_s_this 18;		// short sid/FuzzyExtractor.k
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 6;		// reference sid/FuzzyExtractor.ENCODED_DATA
+					areturn;
+		}
+
+		.method public decode([B)V 4 {
+			.stack 9;
+			.locals 12;
+
+				L0:	getstatic_a 124;		// reference sid/FuzzyExtractor.p_Memory
+					invokevirtual 64;		// geByteRam()[B
+					astore_2;
+					getstatic_a 124;		// reference sid/FuzzyExtractor.p_Memory
+					invokevirtual 63;		// getShortRam()[S
+					astore_3;
+					sconst_0;
+					sstore 4;
+					goto L2;
+				L1:	aload_3;
+					sload 4;
+					getfield_a_this 5;		// reference sid/FuzzyExtractor.ALPHA_TO
+					sload 4;
+					saload;
+					sastore;
+					sinc 4 1;
+				L2:	sload 4;
+					getfield_s_this 17;		// short sid/FuzzyExtractor.n
+					if_scmplt L1;
+				L3:	aload_1;
+					sconst_0;
+					aload_2;
+					sconst_0;
+					getfield_s_this 3;		// short sid/FuzzyExtractor.LENGTH
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sconst_0;
+					sstore 10;
+					sconst_0;
+					sstore 11;
+					sconst_0;
+					sstore 12;
+					sconst_2;
+					getfield_s_this 1;		// short sid/FuzzyExtractor.T
+					smul;
+					sstore 9;
+					sconst_1;
+					sstore 5;
+					goto L14;
+				L4:	getfield_a_this 11;		// reference sid/FuzzyExtractor.s
+					sload 5;
+					saload;
+					sstore 12;
+					sconst_0;
+					sstore 6;
+					goto L10;
+				L5:	aload_2;
+					sload 6;
+					baload;
+					ifeq L9;
+				L6:	sload 5;
+					sload 6;
+					smul;
+					sstore 13;
+					sload 13;
+					ifge L8;
+				L7:	sload 13;
+					sspush 32767;
+					sand;
+					sstore 13;
+					sinc 13 64;
+				L8:	sload 13;
+					getfield_s_this 17;		// short sid/FuzzyExtractor.n
+					srem;
+					sstore 13;
+					sload 12;
+					aload_3;
+					sload 13;
+					saload;
+					sxor;
+					sstore 12;
+				L9:	sinc 6 1;
+				L10:	sload 6;
+					getfield_s_this 3;		// short sid/FuzzyExtractor.LENGTH
+					if_scmplt L5;
+				L11:	sload 12;
+					ifeq L13;
+				L12:	sconst_1;
+					sstore 11;
+				L13:	getfield_a_this 11;		// reference sid/FuzzyExtractor.s
+					sload 5;
+					getfield_a_this 7;		// reference sid/FuzzyExtractor.INDEX_OF
+					sload 12;
+					saload;
+					sastore;
+					sinc 5 1;
+				L14:	sload 5;
+					sload 9;
+					if_scmple L4;
+				L15:	goto L17;
+				L16:	getfield_a_this 5;		// reference sid/FuzzyExtractor.ALPHA_TO
+					sload 4;
+					aload_3;
+					sload 4;
+					saload;
+					sastore;
+					sinc 4 1;
+				L17:	sload 4;
+					getfield_s_this 17;		// short sid/FuzzyExtractor.n
+					if_scmplt L16;
+				L18:	getfield_a_this 9;		// reference sid/FuzzyExtractor.l
+					sconst_0;
+					aload_2;
+					sconst_0;
+					sspush 255;
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sload 11;
+					ifeq_w L68;
+				L19:	aload_3;
+					sconst_0;
+					sconst_0;
+					sastore;
+					aload_3;
+					sconst_1;
+					getfield_a_this 11;		// reference sid/FuzzyExtractor.s
+					sconst_1;
+					saload;
+					sastore;
+					getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sconst_0;
+					sconst_0;
+					sastore;
+					getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sspush 128;
+					sconst_1;
+					sastore;
+					sconst_1;
+					sstore 5;
+					goto L21;
+				L20:	getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 5;
+					sconst_m1;
+					sastore;
+					getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sspush 128;
+					sload 5;
+					sadd;
+					sconst_0;
+					sastore;
+					sinc 5 1;
+				L21:	sload 5;
+					sload 9;
+					if_scmplt L20;
+				L22:	aload_2;
+					sconst_0;
+					sconst_0;
+					bastore;
+					aload_2;
+					sconst_1;
+					sconst_0;
+					bastore;
+					getfield_a_this 10;		// reference sid/FuzzyExtractor.u_lu
+					sconst_0;
+					sconst_m1;
+					sastore;
+					getfield_a_this 10;		// reference sid/FuzzyExtractor.u_lu
+					sconst_1;
+					sconst_0;
+					sastore;
+					sconst_0;
+					sstore 7;
+				L23:	sinc 7 1;
+					aload_3;
+					sload 7;
+					saload;
+					sconst_m1;
+					if_scmpne L28;
+				L24:	aload_2;
+					sload 7;
+					sconst_1;
+					sadd;
+					aload_2;
+					sload 7;
+					baload;
+					bastore;
+					sconst_0;
+					sstore 5;
+					goto L26;
+				L25:	getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 7;
+					sconst_1;
+					sadd;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 7;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					saload;
+					sastore;
+					getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 7;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					getfield_a_this 7;		// reference sid/FuzzyExtractor.INDEX_OF
+					getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 7;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					saload;
+					saload;
+					sastore;
+					sinc 5 1;
+				L26:	sload 5;
+					aload_2;
+					sload 7;
+					baload;
+					if_scmple L25;
+				L27:	goto_w L52;
+				L28:	sload 7;
+					sconst_1;
+					ssub;
+					sstore 8;
+					goto L30;
+				L29:	sinc 8 -1;
+				L30:	aload_3;
+					sload 8;
+					saload;
+					sconst_m1;
+					if_scmpne L32;
+				L31:	sload 8;
+					ifgt L29;
+				L32:	sload 8;
+					ifle L38;
+				L33:	sload 8;
+					sstore 6;
+				L34:	sinc 6 -1;
+					aload_3;
+					sload 6;
+					saload;
+					sconst_m1;
+					if_scmpeq L37;
+				L35:	getfield_a_this 10;		// reference sid/FuzzyExtractor.u_lu
+					sload 8;
+					saload;
+					getfield_a_this 10;		// reference sid/FuzzyExtractor.u_lu
+					sload 6;
+					saload;
+					if_scmpge L37;
+				L36:	sload 6;
+					sstore 8;
+				L37:	sload 6;
+					ifgt L34;
+				L38:	aload_2;
+					sload 7;
+					baload;
+					aload_2;
+					sload 8;
+					baload;
+					sload 7;
+					sadd;
+					sload 8;
+					ssub;
+					if_scmple L40;
+				L39:	aload_2;
+					sload 7;
+					sconst_1;
+					sadd;
+					aload_2;
+					sload 7;
+					baload;
+					bastore;
+					goto L41;
+				L40:	aload_2;
+					sload 7;
+					sconst_1;
+					sadd;
+					aload_2;
+					sload 8;
+					baload;
+					sload 7;
+					sadd;
+					sload 8;
+					ssub;
+					s2b;
+					bastore;
+				L41:	sconst_0;
+					sstore 5;
+					goto L43;
+				L42:	getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 7;
+					sconst_1;
+					sadd;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					sconst_0;
+					sastore;
+					sinc 5 1;
+				L43:	sload 5;
+					sload 9;
+					if_scmplt L42;
+				L44:	sconst_0;
+					sstore 5;
+					goto L48;
+				L45:	getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 8;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					saload;
+					sconst_m1;
+					if_scmpeq L47;
+				L46:	getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 7;
+					sconst_1;
+					sadd;
+					sspush 128;
+					smul;
+					sload 5;
+					sload 7;
+					sadd;
+					sload 8;
+					ssub;
+					sadd;
+					getfield_a_this 5;		// reference sid/FuzzyExtractor.ALPHA_TO
+					aload_3;
+					sload 7;
+					saload;
+					getfield_s_this 17;		// short sid/FuzzyExtractor.n
+					sadd;
+					aload_3;
+					sload 8;
+					saload;
+					ssub;
+					getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 8;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					saload;
+					sadd;
+					getfield_s_this 17;		// short sid/FuzzyExtractor.n
+					srem;
+					saload;
+					sastore;
+				L47:	sinc 5 1;
+				L48:	sload 5;
+					aload_2;
+					sload 8;
+					baload;
+					if_scmple L45;
+				L49:	sconst_0;
+					sstore 5;
+					goto L51;
+				L50:	getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 7;
+					sconst_1;
+					sadd;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					dup2;
+					saload;
+					getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 7;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					saload;
+					sxor;
+					sastore;
+					getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 7;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					getfield_a_this 7;		// reference sid/FuzzyExtractor.INDEX_OF
+					getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 7;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					saload;
+					saload;
+					sastore;
+					sinc 5 1;
+				L51:	sload 5;
+					aload_2;
+					sload 7;
+					baload;
+					if_scmple L50;
+				L52:	getfield_a_this 10;		// reference sid/FuzzyExtractor.u_lu
+					sload 7;
+					sconst_1;
+					sadd;
+					sload 7;
+					aload_2;
+					sload 7;
+					sconst_1;
+					sadd;
+					baload;
+					ssub;
+					sastore;
+					sload 7;
+					bspush 104;
+					if_scmpne L54;
+				L53:	bspush 104;
+					sstore 7;
+				L54:	sload 7;
+					sload 9;
+					if_scmpge_w L65;
+				L55:	getfield_a_this 11;		// reference sid/FuzzyExtractor.s
+					sload 7;
+					sconst_1;
+					sadd;
+					saload;
+					sconst_m1;
+					if_scmpeq L57;
+				L56:	aload_3;
+					sload 7;
+					sconst_1;
+					sadd;
+					getfield_a_this 5;		// reference sid/FuzzyExtractor.ALPHA_TO
+					getfield_a_this 11;		// reference sid/FuzzyExtractor.s
+					sload 7;
+					sconst_1;
+					sadd;
+					saload;
+					saload;
+					sastore;
+					goto L58;
+				L57:	aload_3;
+					sload 7;
+					sconst_1;
+					sadd;
+					sconst_0;
+					sastore;
+				L58:	sconst_1;
+					sstore 5;
+					goto L63;
+				L59:	getfield_a_this 11;		// reference sid/FuzzyExtractor.s
+					sload 7;
+					sconst_1;
+					sadd;
+					sload 5;
+					ssub;
+					saload;
+					sconst_m1;
+					if_scmpeq L62;
+				L60:	getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 7;
+					sconst_1;
+					sadd;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					saload;
+					ifeq L62;
+				L61:	aload_3;
+					sload 7;
+					sconst_1;
+					sadd;
+					dup2;
+					saload;
+					getfield_a_this 5;		// reference sid/FuzzyExtractor.ALPHA_TO
+					getfield_a_this 11;		// reference sid/FuzzyExtractor.s
+					sload 7;
+					sconst_1;
+					sadd;
+					sload 5;
+					ssub;
+					saload;
+					getfield_a_this 7;		// reference sid/FuzzyExtractor.INDEX_OF
+					getfield_a_this 8;		// reference sid/FuzzyExtractor.elp
+					sload 7;
+					sconst_1;
+					sadd;
+					sspush 128;
+					smul;
+					sload 5;
+					sadd;
+					saload;
+					saload;
+					sadd;
+					getfield_s_this 17;		// short sid/FuzzyExtractor.n
+					srem;
+					saload;
+					sxor;
+					sastore;
+				L62:	sinc 5 1;
+				L63:	sload 5;
+					aload_2;
+					sload 7;
+					sconst_1;
+					sadd;
+					baload;
+					if_scmple L59;
+				L64:	aload_3;
+					sload 7;
+					sconst_1;
+					sadd;
+					getfield_a_this 7;		// reference sid/FuzzyExtractor.INDEX_OF
+					aload_3;
+					sload 7;
+					sconst_1;
+					sadd;
+					saload;
+					saload;
+					sastore;
+				L65:	sload 7;
+					sload 9;
+					if_scmpge L67;
+				L66:	aload_2;
+					sload 7;
+					sconst_1;
+					sadd;
+					baload;
+					getfield_s_this 1;		// short sid/FuzzyExtractor.T
+					if_scmple_w L23;
+				L67:	sinc 7 1;
+				L68:	aload_1;
+					getfield_s_this 3;		// short sid/FuzzyExtractor.LENGTH
+					getfield_s_this 18;		// short sid/FuzzyExtractor.k
+					ssub;
+					aload_1;
+					sconst_0;
+					getfield_s_this 18;		// short sid/FuzzyExtractor.k
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					return;
+		}
+
+		.method public static getInstance()Lsid/FuzzyExtractor; 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_a 72;		// reference sid/FuzzyExtractor.p_Instance
+					ifnonnull L2;
+				L1:	new 74;		// sid/FuzzyExtractor
+					dup;
+					invokespecial 81;		// sid/FuzzyExtractor.<init>()V
+					putstatic_a 72;		// reference sid/FuzzyExtractor.p_Instance
+				L2:	getstatic_a 72;		// reference sid/FuzzyExtractor.p_Instance
+					areturn;
+		}
+
+		.method  makeFuzzy([B[B)[B 131 {
+			.stack 7;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					sconst_0;
+					aload_2;
+					sconst_0;
+					getfield_s_this 3;		// short sid/FuzzyExtractor.LENGTH
+					sconst_0;
+					invokevirtual 82;		// xor2([BS[BSSS)V
+					aload_0;
+					getfield_a_this 16;		// reference sid/FuzzyExtractor.temp
+					invokevirtual 85;		// decode([B)V
+					aload_0;
+					getfield_a_this 16;		// reference sid/FuzzyExtractor.temp
+					invokevirtual 87;		// encode([B)[B
+					pop;
+					aload_0;
+					getfield_a_this 6;		// reference sid/FuzzyExtractor.ENCODED_DATA
+					sconst_0;
+					aload_2;
+					sconst_0;
+					getfield_s_this 3;		// short sid/FuzzyExtractor.LENGTH
+					invokevirtual 88;		// xor([BS[BSS)V
+					getfield_a_this 6;		// reference sid/FuzzyExtractor.ENCODED_DATA
+					areturn;
+		}
+
+	}
+
+	.class public MemoryManager 2 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private byte[] transientMemory 0;		// [B
+			private short[] temp_ram 1;		// [S
+			private static MemoryManager p_Instance;		// Lsid/MemoryManager;
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			getShortRam()[S;
+			geByteRam()[B;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public static getInstance()Lsid/MemoryManager; 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_a 89;		// reference sid/MemoryManager.p_Instance
+					ifnonnull L2;
+				L1:	new 90;		// sid/MemoryManager
+					dup;
+					invokespecial 91;		// sid/MemoryManager.<init>()V
+					putstatic_a 89;		// reference sid/MemoryManager.p_Instance
+				L2:	getstatic_a 89;		// reference sid/MemoryManager.p_Instance
+					areturn;
+		}
+
+		.method private <init>()V {
+			.stack 3;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 93;		// java/lang/Object.<init>()V
+					aload_0;
+					sspush 386;
+					sconst_2;
+					invokestatic 92;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 20;		// reference sid/MemoryManager.transientMemory
+					aload_0;
+					sspush 512;
+					sconst_1;
+					invokestatic 94;		// javacard/framework/JCSystem.makeTransientShortArray(SB)[S
+					putfield_a 21;		// reference sid/MemoryManager.temp_ram
+					return;
+		}
+
+		.method public getShortRam()[S 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 21;		// reference sid/MemoryManager.temp_ram
+					areturn;
+		}
+
+		.method public geByteRam()[B 2 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 20;		// reference sid/MemoryManager.transientMemory
+					areturn;
+		}
+
+	}
+
+	.class public ProiectLicentaBio 3 extends 1.3 {		// extends javacard/framework/Applet
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface IConsts { 
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 96;		// javacard/framework/Applet.<init>()V
+					return;
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 97;		// sid/ProiectLicentaBio
+					dup;
+					invokespecial 101;		// sid/ProiectLicentaBio.<init>()V
+					invokevirtual 103;		// register()V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 3;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 106;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_0;
+					baload;
+					ifeq L2;
+				L1:	sspush 28160;
+					invokestatic 112;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	aload_2;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore_3;
+					aload_1;
+					invokevirtual 113;		// setIncomingAndReceive()S
+					sstore 4;
+					goto L4;
+				L3:	sload 4;
+					aload_1;
+					sload 4;
+					invokevirtual 118;		// receiveBytes(S)S
+					sadd;
+					sstore 4;
+				L4:	sload 4;
+					sload_3;
+					if_scmplt L3;
+				L5:	aload_2;
+					sconst_1;
+					baload;
+					stableswitch L8 35 37 L7 L8 L6;
+				L6:	aload_0;
+					aload_1;
+					invokespecial 115;		// sid/ProiectLicentaBio.processBiometrics(Ljavacard/framework/APDU;)V
+					return;
+				L7:	aload_0;
+					aload_1;
+					invokespecial 117;		// sid/ProiectLicentaBio.testMode(Ljavacard/framework/APDU;)V
+					goto L8;
+				L8:	return;
+		}
+
+		.method private processBiometrics(Ljavacard/framework/APDU;)V {
+			.stack 5;
+			.locals 8;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	aload_1;
+					invokevirtual 106;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_2;
+					baload;
+					sstore_3;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore 4;
+					aload_2;
+					sconst_4;
+					baload;
+					sspush 255;
+					sand;
+					sstore 5;
+					sload 5;
+					ifge L2;
+				L1:	sspush 26368;
+					invokestatic 112;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	invokestatic 120;		// sid/User.getInstance()Lsid/User;
+					astore 6;
+					invokestatic 122;		// sid/UserInput.getInstance()Lsid/UserInput;
+					astore 7;
+					sload_3;
+					stableswitch L32 36 73 L6 L3 L5 L19 L12 L21 L32 L32 L32 L32 L32 L32 L26 L25 L27 L20 L28 L29 L32 L32 L32 L32 L32 L32 L32 L32 L32 L32 L4 L32 L18 L7 L8 L9 L10 L11 L30 L31;
+				L3:	aload 6;
+					aload_2;
+					sconst_5;
+					sload 5;
+					invokevirtual 123;		// setPassword([BSS)V
+					goto_w L32;
+				L4:	aload 6;
+					getfield_a 22;		// reference sid/User.Password
+					sconst_0;
+					aload_2;
+					sconst_5;
+					aload 6;
+					getfield_s 23;		// short sid/User.PasswordSize
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					aload 6;
+					getfield_s 23;		// short sid/User.PasswordSize
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					goto_w L32;
+				L5:	aload 6;
+					aload_2;
+					sconst_5;
+					sload 5;
+					invokevirtual 60;		// setIdentity([BSS)V
+					goto_w L32;
+				L6:	aload 6;
+					aload_2;
+					sconst_5;
+					sload 5;
+					invokevirtual 61;		// updateBio([BSS)V
+					goto_w L32;
+				L7:	aload 6;
+					getfield_a 24;		// reference sid/User.biometric
+					getfield_a 25;		// reference sid/User$Biometrics.Biometrics
+					sspush 180;
+					aload_2;
+					sconst_5;
+					sspush 204;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sspush 204;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					goto_w L32;
+				L8:	aload 6;
+					getfield_a 26;		// reference sid/User.P_NUMBER
+					sconst_0;
+					aload_2;
+					sconst_5;
+					sspush 128;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sspush 128;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					goto_w L32;
+				L9:	aload 6;
+					getfield_a 27;		// reference sid/User.Q_NUMBER
+					sconst_0;
+					aload_2;
+					sconst_5;
+					sspush 128;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sspush 128;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					goto_w L32;
+				L10:	aload 6;
+					getfield_a 28;		// reference sid/User.S3
+					sconst_0;
+					aload_2;
+					sconst_5;
+					bspush 20;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					bspush 20;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					goto_w L32;
+				L11:	aload 6;
+					getfield_a 29;		// reference sid/User.S2_PRIM
+					sconst_0;
+					aload_2;
+					sconst_5;
+					bspush 40;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					bspush 40;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					goto_w L32;
+				L12:	sload 4;
+					bspush 39;
+					if_scmpne L14;
+				L13:	invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					aload_2;
+					sconst_5;
+					baload;
+					aload_2;
+					bspush 6;
+					baload;
+					invokestatic 69;		// javacard/framework/Util.makeShort(BB)S
+					putfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					putfield_s 17;		// short sid/FuzzyExtractor.n
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					aload_2;
+					bspush 7;
+					baload;
+					aload_2;
+					bspush 8;
+					baload;
+					invokestatic 69;		// javacard/framework/Util.makeShort(BB)S
+					putfield_s 0;		// short sid/FuzzyExtractor.M
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					aload_2;
+					bspush 9;
+					baload;
+					aload_2;
+					bspush 10;
+					baload;
+					invokestatic 69;		// javacard/framework/Util.makeShort(BB)S
+					putfield_s 1;		// short sid/FuzzyExtractor.T
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					aload_2;
+					bspush 11;
+					baload;
+					aload_2;
+					bspush 12;
+					baload;
+					invokestatic 69;		// javacard/framework/Util.makeShort(BB)S
+					putfield_s 18;		// short sid/FuzzyExtractor.k
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					sconst_2;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 1;		// short sid/FuzzyExtractor.T
+					smul;
+					sconst_1;
+					sadd;
+					putfield_s 2;		// short sid/FuzzyExtractor.D
+				L14:	sload 4;
+					bspush 40;
+					if_scmpne L16;
+				L15:	aload 6;
+					aload_2;
+					sconst_5;
+					sload 5;
+					invokevirtual 70;		// updateGaloisField([BSS)V
+				L16:	sload 4;
+					bspush 41;
+					if_scmpne_w L32;
+				L17:	aload 6;
+					invokevirtual 71;		// createInstanceFuzzy()V
+					goto_w L32;
+				L18:	invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					bspush 8;
+					sshr;
+					sspush 255;
+					sand;
+					s2b;
+					sstore 8;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					s2b;
+					sstore 9;
+					aload_2;
+					sconst_5;
+					sload 8;
+					bastore;
+					aload_2;
+					bspush 6;
+					sload 9;
+					bastore;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 0;		// short sid/FuzzyExtractor.M
+					bspush 8;
+					sshr;
+					sspush 255;
+					sand;
+					s2b;
+					sstore 8;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 0;		// short sid/FuzzyExtractor.M
+					s2b;
+					sstore 9;
+					aload_2;
+					bspush 7;
+					sload 8;
+					bastore;
+					aload_2;
+					bspush 8;
+					sload 9;
+					bastore;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 1;		// short sid/FuzzyExtractor.T
+					bspush 8;
+					sshr;
+					sspush 255;
+					sand;
+					s2b;
+					sstore 8;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 1;		// short sid/FuzzyExtractor.T
+					s2b;
+					sstore 9;
+					aload_2;
+					bspush 9;
+					sload 8;
+					bastore;
+					aload_2;
+					bspush 10;
+					sload 9;
+					bastore;
+					aload_1;
+					sconst_5;
+					bspush 6;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					goto_w L32;
+				L19:	bspush 40;
+					aload 6;
+					getfield_s 30;		// short sid/User.IdentitySize
+					sadd;
+					sstore 8;
+					aload 6;
+					invokevirtual 73;		// registration()[B
+					astore 9;
+					aload 9;
+					sconst_0;
+					aload_2;
+					sconst_5;
+					bspush 48;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					bspush 48;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					goto_w L32;
+				L20:	aload 6;
+					getfield_s 30;		// short sid/User.IdentitySize
+					bspush 40;
+					sadd;
+					sstore 8;
+					aload 6;
+					getfield_a 31;		// reference sid/User.message_registration
+					sconst_0;
+					aload_2;
+					sconst_5;
+					sload 8;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					bspush 48;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					goto_w L32;
+				L21:	sload 4;
+					ifne L23;
+				L22:	aload 6;
+					aload_2;
+					sconst_5;
+					sload 5;
+					sconst_1;
+					invokevirtual 75;		// receiveRegistrationResponse([BSSZ)V
+				L23:	sload 4;
+					sconst_1;
+					if_scmpne_w L32;
+				L24:	aload 6;
+					aload_2;
+					sconst_5;
+					sload 5;
+					sconst_0;
+					invokevirtual 75;		// receiveRegistrationResponse([BSSZ)V
+					goto_w L32;
+				L25:	aload 7;
+					aload_2;
+					sconst_5;
+					sload 5;
+					invokevirtual 76;		// setIdentity([BSS)V
+					goto_w L32;
+				L26:	aload 7;
+					aload_2;
+					sconst_5;
+					sload 5;
+					invokevirtual 77;		// setPassword([BSS)V
+					goto_w L32;
+				L27:	aload 7;
+					aload_2;
+					sconst_5;
+					sload 5;
+					invokevirtual 78;		// auth_update_Bio([BSS)V
+					goto_w L32;
+				L28:	aload 6;
+					aload 7;
+					invokevirtual 79;		// authetificate(Lsid/UserInput;)[B
+					astore 8;
+					aload 6;
+					getfield_s 30;		// short sid/User.IdentitySize
+					sspush 128;
+					sadd;
+					bspush 20;
+					sadd;
+					sstore 9;
+					aload 8;
+					sconst_0;
+					aload_2;
+					sconst_5;
+					sload 9;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sload 9;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					goto L32;
+				L29:	aload 6;
+					aload_2;
+					sconst_5;
+					sload 5;
+					invokevirtual 80;		// authetificate2([BSS)[B
+					astore 8;
+					bspush 20;
+					sstore 9;
+					aload 8;
+					sconst_0;
+					aload_2;
+					sconst_5;
+					sload 9;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sload 9;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					goto L32;
+				L30:	aload 6;
+					getfield_a 32;		// reference sid/User.SK
+					astore 8;
+					bspush 20;
+					sstore 9;
+					aload 8;
+					sconst_0;
+					aload_2;
+					sconst_5;
+					sload 9;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sload 9;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					goto L32;
+				L31:	aload 6;
+					getfield_a 33;		// reference sid/User.M2_N1
+					astore 8;
+					sspush 128;
+					sstore 9;
+					aload 8;
+					sconst_0;
+					aload_2;
+					sconst_5;
+					sload 9;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sload 9;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+				L32:	return;
+		}
+
+		.method private testMode(Ljavacard/framework/APDU;)V {
+			.stack 5;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	1.10;
+
+				L0:	invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					invokevirtual 83;		// createInstance()V
+					sconst_1;
+					invokestatic 84;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+					astore_2;
+					invokestatic 120;		// sid/User.getInstance()Lsid/User;
+					getfield_a 34;		// reference sid/User.P
+					astore_3;
+					aload_2;
+					invokestatic 120;		// sid/User.getInstance()Lsid/User;
+					getfield_a 34;		// reference sid/User.P
+					sconst_0;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					invokevirtual 86;		// generateData([BSS)V
+					sconst_0;
+					sstore 4;
+					goto L2;
+				L1:	aload_3;
+					sload 4;
+					aload_3;
+					sload 4;
+					baload;
+					bspush 16;
+					sshr;
+					sconst_1;
+					sand;
+					bastore;
+					sinc 4 1;
+				L2:	sload 4;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					if_scmplt L1;
+				L3:	invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					aload_3;
+					invokevirtual 87;		// encode([B)[B
+					astore 4;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					aload_3;
+					invokevirtual 85;		// decode([B)V
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					aload_3;
+					invokevirtual 87;		// encode([B)[B
+					astore 4;
+					aload 4;
+					sconst_0;
+					aload_1;
+					invokevirtual 106;		// getBuffer()[B
+					sconst_5;
+					sspush 200;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_1;
+					sconst_5;
+					sspush 200;
+					invokevirtual 59;		// setOutgoingAndSend(SS)V
+					return;
+		}
+
+	}
+
+	.class  User$Biometrics extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			 byte[] Biometrics 0;		// [B
+			final User this$0 1;		// Lsid/User;
+			 short index 2;		// S
+			 short size 3;		// S
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method  <init>(Lsid/User;)V {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					putfield_a 35;		// reference sid/User$Biometrics.this$0
+					aload_0;
+					invokespecial 93;		// java/lang/Object.<init>()V
+					aload_0;
+					sspush 1024;
+					newarray 11;
+					putfield_a 25;		// reference sid/User$Biometrics.Biometrics
+					aload_0;
+					sconst_0;
+					putfield_s 36;		// short sid/User$Biometrics.index
+					aload_0;
+					sconst_0;
+					putfield_s 37;		// short sid/User$Biometrics.size
+					return;
+		}
+
+	}
+
+	.class public User 4 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			public byte[] GROUP_P 0;		// [B
+			 byte[] Password 1;		// [B
+			 byte[] Identity 2;		// [B
+			 byte[] message_registration 3;		// [B
+			 byte[] P_NUMBER 4;		// [B
+			 byte[] Q_NUMBER 5;		// [B
+			 byte[] P 6;		// [B
+			 byte[] HASH_R 7;		// [B
+			 byte[] S3 8;		// [B
+			 byte[] M1 9;		// [B
+			 byte[] BUFFER 10;		// [B
+			 byte[] BUFFER2 11;		// [B
+			 byte[] S2_PRIM 12;		// [B
+			 byte[] N1 13;		// [B
+			 byte[] SK 14;		// [B
+			 byte[] M2_N1 15;		// [B
+			 3.1 rsa 16;		// Ljavacardx/crypto/Cipher;
+			 2.8 mRsaPublicKeyModPow 17;		// Ljavacard/security/RSAPrivateKey;
+			 MemoryManager manager 18;		// Lsid/MemoryManager;
+			 User$Biometrics biometric 19;		// Lsid/User$Biometrics;
+			 short PasswordSize 20;		// S
+			 short IdentitySize 21;		// S
+			 short index_buffer 22;		// S
+			static User p_Instance;		// Lsid/User;
+			static FuzzyExtractor p_InstanceFuzzy;		// Lsid/FuzzyExtractor;
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			createInstanceFuzzy()V;
+			setPassword([BSS)V;
+			setIdentity([BSS)V;
+			updateBio([BSS)V;
+			updateGaloisField([BSS)V;
+			registration()[B;
+			receiveRegistrationResponse([BSSZ)V;
+			authetificate(Lsid/UserInput;)[B;
+			authetificate2([BSS)[B;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface IConsts { 
+			}
+
+		}
+
+		.method private <init>()V {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 93;		// java/lang/Object.<init>()V
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 22;		// reference sid/User.Password
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 38;		// reference sid/User.Identity
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 31;		// reference sid/User.message_registration
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 26;		// reference sid/User.P_NUMBER
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 27;		// reference sid/User.Q_NUMBER
+					aload_0;
+					sspush 512;
+					newarray 11;
+					putfield_a 34;		// reference sid/User.P
+					aload_0;
+					bspush 20;
+					newarray 11;
+					putfield_a 39;		// reference sid/User.HASH_R
+					aload_0;
+					bspush 20;
+					newarray 11;
+					putfield_a 28;		// reference sid/User.S3
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 40;		// reference sid/User.M1
+					aload_0;
+					sspush 512;
+					newarray 11;
+					putfield_a 41;		// reference sid/User.BUFFER
+					aload_0;
+					sspush 400;
+					newarray 11;
+					putfield_a 42;		// reference sid/User.BUFFER2
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 29;		// reference sid/User.S2_PRIM
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 43;		// reference sid/User.N1
+					aload_0;
+					bspush 20;
+					newarray 11;
+					putfield_a 32;		// reference sid/User.SK
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 33;		// reference sid/User.M2_N1
+					aload_0;
+					sconst_0;
+					putfield_s 44;		// short sid/User.index_buffer
+					aload_0;
+					sspush 128;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush -46;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 26;
+					bastore;
+					dup;
+					sconst_2;
+					bspush -24;
+					bastore;
+					dup;
+					sconst_3;
+					bspush -42;
+					bastore;
+					dup;
+					sconst_4;
+					bspush 110;
+					bastore;
+					dup;
+					sconst_5;
+					bspush 108;
+					bastore;
+					dup;
+					bspush 6;
+					bspush 107;
+					bastore;
+					dup;
+					bspush 7;
+					bspush 60;
+					bastore;
+					dup;
+					bspush 8;
+					bspush -19;
+					bastore;
+					dup;
+					bspush 9;
+					bspush 14;
+					bastore;
+					dup;
+					bspush 10;
+					bspush -77;
+					bastore;
+					dup;
+					bspush 11;
+					bspush -33;
+					bastore;
+					dup;
+					bspush 12;
+					bspush 26;
+					bastore;
+					dup;
+					bspush 13;
+					bspush 38;
+					bastore;
+					dup;
+					bspush 14;
+					bspush -55;
+					bastore;
+					dup;
+					bspush 15;
+					bspush 27;
+					bastore;
+					dup;
+					bspush 16;
+					bspush -34;
+					bastore;
+					dup;
+					bspush 17;
+					bspush -19;
+					bastore;
+					dup;
+					bspush 18;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 19;
+					bspush 60;
+					bastore;
+					dup;
+					bspush 20;
+					bspush 23;
+					bastore;
+					dup;
+					bspush 21;
+					bspush -40;
+					bastore;
+					dup;
+					bspush 22;
+					bspush 73;
+					bastore;
+					dup;
+					bspush 23;
+					bspush -45;
+					bastore;
+					dup;
+					bspush 24;
+					bspush 14;
+					bastore;
+					dup;
+					bspush 25;
+					bspush -61;
+					bastore;
+					dup;
+					bspush 26;
+					bspush 9;
+					bastore;
+					dup;
+					bspush 27;
+					bspush -127;
+					bastore;
+					dup;
+					bspush 28;
+					bspush 62;
+					bastore;
+					dup;
+					bspush 29;
+					bspush 77;
+					bastore;
+					dup;
+					bspush 30;
+					bspush 55;
+					bastore;
+					dup;
+					bspush 31;
+					bspush -103;
+					bastore;
+					dup;
+					bspush 32;
+					bspush -14;
+					bastore;
+					dup;
+					bspush 33;
+					bspush 109;
+					bastore;
+					dup;
+					bspush 34;
+					bspush -80;
+					bastore;
+					dup;
+					bspush 35;
+					bspush -44;
+					bastore;
+					dup;
+					bspush 36;
+					bspush -108;
+					bastore;
+					dup;
+					bspush 37;
+					bspush -24;
+					bastore;
+					dup;
+					bspush 38;
+					bspush 46;
+					bastore;
+					dup;
+					bspush 39;
+					bspush -58;
+					bastore;
+					dup;
+					bspush 40;
+					bspush 30;
+					bastore;
+					dup;
+					bspush 41;
+					bspush -87;
+					bastore;
+					dup;
+					bspush 42;
+					bspush -3;
+					bastore;
+					dup;
+					bspush 43;
+					bspush -57;
+					bastore;
+					dup;
+					bspush 44;
+					bspush 11;
+					bastore;
+					dup;
+					bspush 45;
+					bspush -75;
+					bastore;
+					dup;
+					bspush 46;
+					bspush -53;
+					bastore;
+					dup;
+					bspush 47;
+					bspush -54;
+					bastore;
+					dup;
+					bspush 48;
+					bspush -14;
+					bastore;
+					dup;
+					bspush 49;
+					bspush -27;
+					bastore;
+					dup;
+					bspush 50;
+					bspush -15;
+					bastore;
+					dup;
+					bspush 51;
+					bspush -118;
+					bastore;
+					dup;
+					bspush 52;
+					bspush -125;
+					bastore;
+					dup;
+					bspush 53;
+					bspush 100;
+					bastore;
+					dup;
+					bspush 54;
+					bspush -108;
+					bastore;
+					dup;
+					bspush 55;
+					bspush -11;
+					bastore;
+					dup;
+					bspush 56;
+					bspush -114;
+					bastore;
+					dup;
+					bspush 57;
+					bspush 103;
+					bastore;
+					dup;
+					bspush 58;
+					bspush -58;
+					bastore;
+					dup;
+					bspush 59;
+					bspush -42;
+					bastore;
+					dup;
+					bspush 60;
+					bspush 22;
+					bastore;
+					dup;
+					bspush 61;
+					bspush 72;
+					bastore;
+					dup;
+					bspush 62;
+					bspush 12;
+					bastore;
+					dup;
+					bspush 63;
+					bspush 55;
+					bastore;
+					dup;
+					bspush 64;
+					bspush -89;
+					bastore;
+					dup;
+					bspush 65;
+					bspush -14;
+					bastore;
+					dup;
+					bspush 66;
+					bspush 48;
+					bastore;
+					dup;
+					bspush 67;
+					bspush 97;
+					bastore;
+					dup;
+					bspush 68;
+					sconst_1;
+					bastore;
+					dup;
+					bspush 69;
+					bspush -4;
+					bastore;
+					dup;
+					bspush 70;
+					bspush -97;
+					bastore;
+					dup;
+					bspush 71;
+					bspush 15;
+					bastore;
+					dup;
+					bspush 72;
+					bspush 71;
+					bastore;
+					dup;
+					bspush 73;
+					bspush 104;
+					bastore;
+					dup;
+					bspush 74;
+					bspush -7;
+					bastore;
+					dup;
+					bspush 75;
+					bspush -55;
+					bastore;
+					dup;
+					bspush 76;
+					bspush 121;
+					bastore;
+					dup;
+					bspush 77;
+					bspush 60;
+					bastore;
+					dup;
+					bspush 78;
+					bspush 43;
+					bastore;
+					dup;
+					bspush 79;
+					bspush -31;
+					bastore;
+					dup;
+					bspush 80;
+					bspush 118;
+					bastore;
+					dup;
+					bspush 81;
+					bspush -80;
+					bastore;
+					dup;
+					bspush 82;
+					bspush -73;
+					bastore;
+					dup;
+					bspush 83;
+					bspush -55;
+					bastore;
+					dup;
+					bspush 84;
+					bspush 121;
+					bastore;
+					dup;
+					bspush 85;
+					bspush -76;
+					bastore;
+					dup;
+					bspush 86;
+					bspush 6;
+					bastore;
+					dup;
+					bspush 87;
+					bspush 93;
+					bastore;
+					dup;
+					bspush 88;
+					bspush 62;
+					bastore;
+					dup;
+					bspush 89;
+					bspush -125;
+					bastore;
+					dup;
+					bspush 90;
+					bspush 86;
+					bastore;
+					dup;
+					bspush 91;
+					bspush -122;
+					bastore;
+					dup;
+					bspush 92;
+					bspush -93;
+					bastore;
+					dup;
+					bspush 93;
+					bspush -16;
+					bastore;
+					dup;
+					bspush 94;
+					bspush -72;
+					bastore;
+					dup;
+					bspush 95;
+					bspush 66;
+					bastore;
+					dup;
+					bspush 96;
+					bspush 12;
+					bastore;
+					dup;
+					bspush 97;
+					bspush 104;
+					bastore;
+					dup;
+					bspush 98;
+					bspush 52;
+					bastore;
+					dup;
+					bspush 99;
+					bspush -53;
+					bastore;
+					dup;
+					bspush 100;
+					bspush 23;
+					bastore;
+					dup;
+					bspush 101;
+					bspush -109;
+					bastore;
+					dup;
+					bspush 102;
+					sconst_3;
+					bastore;
+					dup;
+					bspush 103;
+					bspush -122;
+					bastore;
+					dup;
+					bspush 104;
+					bspush -34;
+					bastore;
+					dup;
+					bspush 105;
+					bspush -38;
+					bastore;
+					dup;
+					bspush 106;
+					bspush -78;
+					bastore;
+					dup;
+					bspush 107;
+					bspush -80;
+					bastore;
+					dup;
+					bspush 108;
+					bspush 125;
+					bastore;
+					dup;
+					bspush 109;
+					bspush -44;
+					bastore;
+					dup;
+					bspush 110;
+					bspush 115;
+					bastore;
+					dup;
+					bspush 111;
+					bspush 68;
+					bastore;
+					dup;
+					bspush 112;
+					bspush -102;
+					bastore;
+					dup;
+					bspush 113;
+					bspush 72;
+					bastore;
+					dup;
+					bspush 114;
+					bspush -70;
+					bastore;
+					dup;
+					bspush 115;
+					bspush -85;
+					bastore;
+					dup;
+					bspush 116;
+					bspush 49;
+					bastore;
+					dup;
+					bspush 117;
+					bspush 98;
+					bastore;
+					dup;
+					bspush 118;
+					bspush -122;
+					bastore;
+					dup;
+					bspush 119;
+					bspush -76;
+					bastore;
+					dup;
+					bspush 120;
+					bspush 33;
+					bastore;
+					dup;
+					bspush 121;
+					sconst_5;
+					bastore;
+					dup;
+					bspush 122;
+					bspush 36;
+					bastore;
+					dup;
+					bspush 123;
+					bspush 117;
+					bastore;
+					dup;
+					bspush 124;
+					bspush -47;
+					bastore;
+					dup;
+					bspush 125;
+					bspush 52;
+					bastore;
+					dup;
+					bspush 126;
+					bspush -51;
+					bastore;
+					dup;
+					bspush 127;
+					bspush 59;
+					bastore;
+					putfield_a 45;		// reference sid/User.GROUP_P
+					aload_0;
+					new 98;		// sid/User$Biometrics
+					dup;
+					aload_0;
+					invokespecial 99;		// sid/User$Biometrics.<init>(Lsid/User;)V
+					putfield_a 24;		// reference sid/User.biometric
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					putstatic_a 100;		// reference sid/User.p_InstanceFuzzy
+					aload_0;
+					invokestatic 95;		// sid/MemoryManager.getInstance()Lsid/MemoryManager;
+					putfield_a 46;		// reference sid/User.manager
+					aload_0;
+					bspush 12;
+					sconst_0;
+					invokestatic 102;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+					putfield_a 47;		// reference sid/User.rsa
+					aload_0;
+					sconst_5;
+					sspush 1024;
+					sconst_0;
+					invokestatic 104;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 105;		// T_CLASSORINTERFACE javacard/security/RSAPrivateKey
+					putfield_a 48;		// reference sid/User.mRsaPublicKeyModPow
+					return;
+		}
+
+		.method public static getInstance()Lsid/User; 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_a 107;		// reference sid/User.p_Instance
+					ifnonnull L2;
+				L1:	new 108;		// sid/User
+					dup;
+					invokespecial 109;		// sid/User.<init>()V
+					putstatic_a 107;		// reference sid/User.p_Instance
+				L2:	getstatic_a 107;		// reference sid/User.p_Instance
+					areturn;
+		}
+
+		.method public createInstanceFuzzy()V 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					invokevirtual 83;		// createInstance()V
+					return;
+		}
+
+		.method public setPassword([BSS)V 2 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_1;
+					sload_2;
+					getfield_a_this 22;		// reference sid/User.Password
+					sconst_0;
+					sload_3;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_0;
+					sload_3;
+					putfield_s 23;		// short sid/User.PasswordSize
+					return;
+		}
+
+		.method public setIdentity([BSS)V 3 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_1;
+					sload_2;
+					getfield_a_this 38;		// reference sid/User.Identity
+					sconst_0;
+					sload_3;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_0;
+					sload_3;
+					putfield_s 30;		// short sid/User.IdentitySize
+					return;
+		}
+
+		.method public updateBio([BSS)V 4 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_1;
+					sload_2;
+					getfield_a_this 24;		// reference sid/User.biometric
+					getfield_a 25;		// reference sid/User$Biometrics.Biometrics
+					getfield_a_this 24;		// reference sid/User.biometric
+					getfield_s 36;		// short sid/User$Biometrics.index
+					sload_3;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 24;		// reference sid/User.biometric
+					dup;
+					getfield_s 36;		// short sid/User$Biometrics.index
+					sload_3;
+					sadd;
+					putfield_s 36;		// short sid/User$Biometrics.index
+					getfield_a_this 24;		// reference sid/User.biometric
+					dup;
+					getfield_s 37;		// short sid/User$Biometrics.size
+					sload_3;
+					sadd;
+					putfield_s 37;		// short sid/User$Biometrics.size
+					return;
+		}
+
+		.method public updateGaloisField([BSS)V 5 {
+			.stack 0;
+			.locals 0;
+
+				L0:	return;
+		}
+
+		.method public registration()[B 6 {
+			.stack 6;
+			.locals 6;
+
+				L0:	getfield_a_this 46;		// reference sid/User.manager
+					invokevirtual 64;		// geByteRam()[B
+					astore_1;
+					sconst_0;
+					sstore_2;
+					sconst_1;
+					invokestatic 84;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+					astore_3;
+					sconst_1;
+					sconst_0;
+					invokestatic 110;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					astore 4;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 18;		// short sid/FuzzyExtractor.k
+					sstore 5;
+					aload_3;
+					getfield_a_this 34;		// reference sid/User.P
+					sconst_0;
+					sload 5;
+					invokevirtual 86;		// generateData([BSS)V
+					sconst_0;
+					sstore 6;
+					goto L2;
+				L1:	getfield_a_this 34;		// reference sid/User.P
+					sload 6;
+					getfield_a_this 34;		// reference sid/User.P
+					sload 6;
+					baload;
+					bspush 16;
+					sshr;
+					sconst_1;
+					sand;
+					bastore;
+					sinc 6 1;
+				L2:	sload 6;
+					sload 5;
+					if_scmplt L1;
+				L3:	invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_a_this 34;		// reference sid/User.P
+					invokevirtual 87;		// encode([B)[B
+					pop;
+					sconst_1;
+					sconst_0;
+					invokestatic 110;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					getfield_a_this 24;		// reference sid/User.biometric
+					getfield_a 25;		// reference sid/User$Biometrics.Biometrics
+					sconst_0;
+					getstatic_a 100;		// reference sid/User.p_InstanceFuzzy
+					getfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					getfield_a_this 39;		// reference sid/User.HASH_R
+					sconst_0;
+					invokevirtual 111;		// doFinal([BSS[BS)S
+					pop;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_a 6;		// reference sid/FuzzyExtractor.ENCODED_DATA
+					sconst_0;
+					getfield_a_this 34;		// reference sid/User.P
+					sconst_0;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_a_this 34;		// reference sid/User.P
+					sconst_0;
+					getfield_a_this 24;		// reference sid/User.biometric
+					getfield_a 25;		// reference sid/User$Biometrics.Biometrics
+					sconst_0;
+					invokestatic 68;		// sid/FuzzyExtractor.getInstance()Lsid/FuzzyExtractor;
+					getfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					invokevirtual 88;		// xor([BS[BSS)V
+					getfield_a_this 38;		// reference sid/User.Identity
+					sconst_0;
+					getfield_a_this 31;		// reference sid/User.message_registration
+					sload_2;
+					getfield_s_this 30;		// short sid/User.IdentitySize
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sload_2;
+					getfield_s_this 30;		// short sid/User.IdentitySize
+					sadd;
+					sstore_2;
+					sconst_1;
+					sconst_0;
+					invokestatic 110;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					getfield_a_this 24;		// reference sid/User.biometric
+					getfield_a 25;		// reference sid/User$Biometrics.Biometrics
+					sconst_0;
+					getfield_a_this 24;		// reference sid/User.biometric
+					getfield_s 36;		// short sid/User$Biometrics.index
+					aload_1;
+					sconst_0;
+					invokevirtual 111;		// doFinal([BSS[BS)S
+					pop;
+					aload_1;
+					sconst_0;
+					getfield_a_this 31;		// reference sid/User.message_registration
+					sload_2;
+					bspush 20;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sinc 2 20;
+					getfield_a_this 24;		// reference sid/User.biometric
+					getfield_a 25;		// reference sid/User$Biometrics.Biometrics
+					sconst_0;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					getfield_a_this 24;		// reference sid/User.biometric
+					getfield_s 36;		// short sid/User$Biometrics.index
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 22;		// reference sid/User.Password
+					sconst_0;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					getfield_a_this 24;		// reference sid/User.biometric
+					getfield_s 36;		// short sid/User$Biometrics.index
+					getfield_s_this 23;		// short sid/User.PasswordSize
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sconst_1;
+					sconst_0;
+					invokestatic 110;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					getfield_a_this 24;		// reference sid/User.biometric
+					getfield_s 36;		// short sid/User$Biometrics.index
+					getfield_s_this 23;		// short sid/User.PasswordSize
+					sadd;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					invokevirtual 111;		// doFinal([BSS[BS)S
+					pop;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					getfield_a_this 31;		// reference sid/User.message_registration
+					sload_2;
+					bspush 20;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 31;		// reference sid/User.message_registration
+					areturn;
+		}
+
+		.method public receiveRegistrationResponse([BSSZ)V 7 {
+			.stack 5;
+			.locals 0;
+
+				L0:	sload 4;
+					ifeq L2;
+				L1:	aload_1;
+					sload_2;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					getfield_s_this 44;		// short sid/User.index_buffer
+					sload_3;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_0;
+					dup;
+					getfield_s 44;		// short sid/User.index_buffer
+					sload_3;
+					sadd;
+					putfield_s 44;		// short sid/User.index_buffer
+					goto L3;
+				L2:	aload_1;
+					sload_2;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					getfield_s_this 44;		// short sid/User.index_buffer
+					sload_3;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_0;
+					dup;
+					getfield_s 44;		// short sid/User.index_buffer
+					sload_3;
+					sadd;
+					putfield_s 44;		// short sid/User.index_buffer
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					getfield_a_this 28;		// reference sid/User.S3
+					sconst_0;
+					bspush 20;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					bspush 20;
+					getfield_a_this 26;		// reference sid/User.P_NUMBER
+					sconst_0;
+					sspush 128;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sspush 148;
+					getfield_a_this 27;		// reference sid/User.Q_NUMBER
+					sconst_0;
+					sspush 128;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+				L3:	return;
+		}
+
+		.method public authetificate(Lsid/UserInput;)[B 8 {
+			.stack 6;
+			.locals 4;
+
+				L0:	getstatic_a 100;		// reference sid/User.p_InstanceFuzzy
+					aload_1;
+					getfield_a 49;		// reference sid/UserInput.challange_biometric
+					getfield_a 50;		// reference sid/UserInput$Biometrics.Biometrics
+					getfield_a_this 34;		// reference sid/User.P
+					invokevirtual 114;		// makeFuzzy([B[B)[B
+					astore_2;
+					aload_2;
+					sconst_0;
+					aload_1;
+					getfield_a 51;		// reference sid/UserInput.R_PRIM
+					sconst_0;
+					getstatic_a 100;		// reference sid/User.p_InstanceFuzzy
+					getfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sconst_1;
+					sconst_0;
+					invokestatic 110;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					aload_2;
+					sconst_0;
+					getstatic_a 100;		// reference sid/User.p_InstanceFuzzy
+					getfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					aload_2;
+					sconst_0;
+					invokevirtual 111;		// doFinal([BSS[BS)S
+					pop;
+					aload_2;
+					sconst_0;
+					getfield_a_this 39;		// reference sid/User.HASH_R
+					sconst_0;
+					bspush 20;
+					invokestatic 116;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+					sstore_3;
+					sload_3;
+					ifeq L2;
+				L1:	sspush 27013;
+					invokestatic 112;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	invokestatic 95;		// sid/MemoryManager.getInstance()Lsid/MemoryManager;
+					invokevirtual 64;		// geByteRam()[B
+					astore 4;
+					sconst_0;
+					sstore 5;
+					aload_1;
+					getfield_a 51;		// reference sid/UserInput.R_PRIM
+					sconst_0;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sload 5;
+					getstatic_a 100;		// reference sid/User.p_InstanceFuzzy
+					getfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sload 5;
+					getstatic_a 100;		// reference sid/User.p_InstanceFuzzy
+					getfield_s 3;		// short sid/FuzzyExtractor.LENGTH
+					sadd;
+					sstore 5;
+					aload_1;
+					getfield_a 52;		// reference sid/UserInput.Password
+					sconst_0;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sload 5;
+					aload_1;
+					getfield_s 53;		// short sid/UserInput.PasswordSize
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sload 5;
+					aload_1;
+					getfield_s 53;		// short sid/UserInput.PasswordSize
+					sadd;
+					sstore 5;
+					sconst_1;
+					sconst_0;
+					invokestatic 110;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					sload 5;
+					getfield_a_this 42;		// reference sid/User.BUFFER2
+					sconst_0;
+					invokevirtual 111;		// doFinal([BSS[BS)S
+					pop;
+					aload_2;
+					sconst_0;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					bspush 20;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 42;		// reference sid/User.BUFFER2
+					sconst_0;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					bspush 20;
+					bspush 20;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sconst_1;
+					sconst_0;
+					invokestatic 110;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					bspush 40;
+					getfield_a_this 29;		// reference sid/User.S2_PRIM
+					sconst_0;
+					invokevirtual 111;		// doFinal([BSS[BS)S
+					pop;
+					getstatic_a 100;		// reference sid/User.p_InstanceFuzzy
+					getfield_a_this 29;		// reference sid/User.S2_PRIM
+					sconst_0;
+					getfield_a_this 28;		// reference sid/User.S3
+					sconst_0;
+					bspush 20;
+					invokevirtual 88;		// xor([BS[BSS)V
+					getfield_a_this 45;		// reference sid/User.GROUP_P
+					sconst_0;
+					aload 4;
+					sconst_0;
+					sspush 128;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sconst_1;
+					invokestatic 84;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+					getfield_a_this 43;		// reference sid/User.N1
+					sconst_0;
+					bspush 20;
+					invokevirtual 86;		// generateData([BSS)V
+					getfield_a_this 43;		// reference sid/User.N1
+					sconst_0;
+					aload 4;
+					sspush 128;
+					bspush 20;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload 4;
+					sspush 148;
+					sspush 128;
+					sconst_0;
+					invokestatic 66;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					getfield_a_this 29;		// reference sid/User.S2_PRIM
+					sconst_0;
+					aload 4;
+					sspush 256;
+					bspush 20;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sconst_0;
+					sstore 5;
+					getfield_a_this 48;		// reference sid/User.mRsaPublicKeyModPow
+					aload 4;
+					sconst_0;
+					sspush 128;
+					invokeinterface 4 105 7;		// javacard/security/RSAPrivateKey
+					sload 5;
+					sspush 128;
+					sadd;
+					sstore 5;
+					getfield_a_this 48;		// reference sid/User.mRsaPublicKeyModPow
+					aload 4;
+					sspush 128;
+					bspush 20;
+					invokeinterface 4 105 6;		// javacard/security/RSAPrivateKey
+					sinc 5 20;
+					getfield_a_this 47;		// reference sid/User.rsa
+					getfield_a_this 48;		// reference sid/User.mRsaPublicKeyModPow
+					sconst_1;
+					invokevirtual 119;		// init(Ljavacard/security/Key;B)V
+					getfield_a_this 47;		// reference sid/User.rsa
+					aload 4;
+					sspush 148;
+					sspush 128;
+					aload 4;
+					aload_1;
+					getfield_s 54;		// short sid/UserInput.IdentitySize
+					invokevirtual 121;		// doFinal([BSS[BS)S
+					pop;
+					aload 4;
+					aload_1;
+					getfield_s 54;		// short sid/UserInput.IdentitySize
+					getfield_a_this 40;		// reference sid/User.M1
+					sconst_0;
+					sspush 128;
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					getfield_a 55;		// reference sid/UserInput.Identity
+					sconst_0;
+					aload 4;
+					sconst_0;
+					aload_1;
+					getfield_s 54;		// short sid/UserInput.IdentitySize
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 29;		// reference sid/User.S2_PRIM
+					sconst_0;
+					aload 4;
+					sspush 128;
+					aload_1;
+					getfield_s 54;		// short sid/UserInput.IdentitySize
+					sadd;
+					bspush 20;
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sconst_1;
+					sconst_0;
+					invokestatic 110;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					aload 4;
+					sconst_0;
+					sspush 148;
+					aload_1;
+					getfield_s 54;		// short sid/UserInput.IdentitySize
+					sadd;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					getfield_s_this 30;		// short sid/User.IdentitySize
+					invokevirtual 111;		// doFinal([BSS[BS)S
+					pop;
+					aload_1;
+					getfield_a 55;		// reference sid/UserInput.Identity
+					sconst_0;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					aload_1;
+					getfield_s 54;		// short sid/UserInput.IdentitySize
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload 4;
+					aload_1;
+					getfield_s 54;		// short sid/UserInput.IdentitySize
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					aload_1;
+					getfield_s 54;		// short sid/UserInput.IdentitySize
+					bspush 20;
+					sadd;
+					sspush 128;
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					areturn;
+		}
+
+		.method public authetificate2([BSS)[B 9 {
+			.stack 6;
+			.locals 4;
+
+				L0:	sconst_0;
+					sstore 4;
+					sload_2;
+					bspush 20;
+					sadd;
+					sstore 5;
+					getfield_a_this 38;		// reference sid/User.Identity
+					sconst_0;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					getfield_s_this 30;		// short sid/User.IdentitySize
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sload 4;
+					getfield_s_this 30;		// short sid/User.IdentitySize
+					sadd;
+					sstore 4;
+					getfield_a_this 29;		// reference sid/User.S2_PRIM
+					sconst_0;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sload 4;
+					bspush 20;
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sinc 4 20;
+					aload_1;
+					sload 5;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sload 4;
+					sspush 128;
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sload 4;
+					sspush 128;
+					sadd;
+					sstore 4;
+					sconst_1;
+					sconst_0;
+					invokestatic 110;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					sload 4;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					invokevirtual 111;		// doFinal([BSS[BS)S
+					pop;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					aload_1;
+					sload_2;
+					bspush 20;
+					invokestatic 116;		// javacard/framework/Util.arrayCompare([BS[BSS)B
+					sstore 6;
+					sload 6;
+					ifeq L2;
+				L1:	sspush 27013;
+					invokestatic 112;		// javacard/framework/ISOException.throwIt(S)V
+				L2:	sconst_0;
+					sstore 4;
+					getfield_a_this 40;		// reference sid/User.M1
+					sconst_0;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sload 4;
+					sspush 128;
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sload 4;
+					sspush 128;
+					sadd;
+					sstore 4;
+					getfield_a_this 38;		// reference sid/User.Identity
+					sconst_0;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sload 4;
+					getfield_s_this 30;		// short sid/User.IdentitySize
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sload 4;
+					getfield_s_this 30;		// short sid/User.IdentitySize
+					sadd;
+					sstore 4;
+					getfield_a_this 29;		// reference sid/User.S2_PRIM
+					sconst_0;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sload 4;
+					bspush 20;
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sinc 4 20;
+					aload_1;
+					sload 5;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sload 4;
+					sspush 128;
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					sload 4;
+					sspush 128;
+					sadd;
+					sstore 4;
+					sconst_1;
+					sconst_0;
+					invokestatic 110;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					sload 4;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					sconst_0;
+					invokevirtual 111;		// doFinal([BSS[BS)S
+					pop;
+					invokestatic 95;		// sid/MemoryManager.getInstance()Lsid/MemoryManager;
+					invokevirtual 64;		// geByteRam()[B
+					astore 7;
+					getfield_a_this 29;		// reference sid/User.S2_PRIM
+					sconst_0;
+					getfield_a_this 42;		// reference sid/User.BUFFER2
+					sconst_0;
+					bspush 20;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 38;		// reference sid/User.Identity
+					sconst_0;
+					getfield_a_this 42;		// reference sid/User.BUFFER2
+					sspush 148;
+					getfield_s_this 30;		// short sid/User.IdentitySize
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 45;		// reference sid/User.GROUP_P
+					sconst_0;
+					aload 7;
+					sconst_0;
+					sspush 128;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 43;		// reference sid/User.N1
+					sconst_0;
+					aload 7;
+					sspush 128;
+					bspush 20;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 48;		// reference sid/User.mRsaPublicKeyModPow
+					invokeinterface 1 105 0;		// javacard/security/RSAPrivateKey
+					aload 7;
+					sspush 148;
+					sspush 128;
+					sconst_0;
+					invokestatic 66;		// javacard/framework/Util.arrayFillNonAtomic([BSSB)S
+					pop;
+					sconst_0;
+					sstore 4;
+					getfield_a_this 48;		// reference sid/User.mRsaPublicKeyModPow
+					aload 7;
+					sconst_0;
+					sspush 128;
+					invokeinterface 4 105 7;		// javacard/security/RSAPrivateKey
+					sload 4;
+					sspush 128;
+					sadd;
+					sstore 4;
+					getfield_a_this 48;		// reference sid/User.mRsaPublicKeyModPow
+					aload 7;
+					sspush 128;
+					bspush 20;
+					invokeinterface 4 105 6;		// javacard/security/RSAPrivateKey
+					sinc 4 20;
+					aload_1;
+					sload 5;
+					aload 7;
+					sload 4;
+					sspush 128;
+					invokestatic 65;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					getfield_a_this 47;		// reference sid/User.rsa
+					getfield_a_this 48;		// reference sid/User.mRsaPublicKeyModPow
+					sconst_1;
+					invokevirtual 119;		// init(Ljavacard/security/Key;B)V
+					getfield_a_this 47;		// reference sid/User.rsa
+					aload 7;
+					sspush 148;
+					sspush 128;
+					getfield_a_this 42;		// reference sid/User.BUFFER2
+					bspush 20;
+					invokevirtual 121;		// doFinal([BSS[BS)S
+					pop;
+					getfield_a_this 42;		// reference sid/User.BUFFER2
+					bspush 20;
+					getfield_a_this 33;		// reference sid/User.M2_N1
+					sconst_0;
+					sspush 128;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					sconst_1;
+					sconst_0;
+					invokestatic 110;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					getfield_a_this 42;		// reference sid/User.BUFFER2
+					sconst_0;
+					sspush 148;
+					getfield_s_this 30;		// short sid/User.IdentitySize
+					sadd;
+					getfield_a_this 32;		// reference sid/User.SK
+					sconst_0;
+					invokevirtual 111;		// doFinal([BSS[BS)S
+					pop;
+					getfield_a_this 41;		// reference sid/User.BUFFER
+					areturn;
+		}
+
+	}
+
+	.class  UserInput$Biometrics extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			 byte[] Biometrics 0;		// [B
+			final UserInput this$0 1;		// Lsid/UserInput;
+			 short index 2;		// S
+			 short size 3;		// S
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method  <init>(Lsid/UserInput;)V {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					putfield_a 56;		// reference sid/UserInput$Biometrics.this$0
+					aload_0;
+					invokespecial 93;		// java/lang/Object.<init>()V
+					aload_0;
+					sspush 512;
+					newarray 11;
+					putfield_a 50;		// reference sid/UserInput$Biometrics.Biometrics
+					aload_0;
+					sconst_0;
+					putfield_s 57;		// short sid/UserInput$Biometrics.index
+					aload_0;
+					sconst_0;
+					putfield_s 58;		// short sid/UserInput$Biometrics.size
+					return;
+		}
+
+	}
+
+	.class public UserInput 5 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			public short PasswordSize 0;		// S
+			public short IdentitySize 1;		// S
+			public byte[] Password 2;		// [B
+			public byte[] Identity 3;		// [B
+			public byte[] R_PRIM 4;		// [B
+			public UserInput$Biometrics challange_biometric 5;		// Lsid/UserInput$Biometrics;
+			static UserInput p_Instance;		// Lsid/UserInput;
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			auth_update_Bio([BSS)V;
+			setPassword([BSS)V;
+			setIdentity([BSS)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface IConsts { 
+			}
+
+		}
+
+		.method public <init>()V 0 {
+			.stack 4;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 93;		// java/lang/Object.<init>()V
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 52;		// reference sid/UserInput.Password
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 55;		// reference sid/UserInput.Identity
+					aload_0;
+					sspush 512;
+					newarray 11;
+					putfield_a 51;		// reference sid/UserInput.R_PRIM
+					aload_0;
+					new 126;		// sid/UserInput$Biometrics
+					dup;
+					aload_0;
+					invokespecial 127;		// sid/UserInput$Biometrics.<init>(Lsid/UserInput;)V
+					putfield_a 49;		// reference sid/UserInput.challange_biometric
+					return;
+		}
+
+		.method public static getInstance()Lsid/UserInput; 1 {
+			.stack 2;
+			.locals 0;
+
+				L0:	getstatic_a 128;		// reference sid/UserInput.p_Instance
+					ifnonnull L2;
+				L1:	new 129;		// sid/UserInput
+					dup;
+					invokespecial 130;		// sid/UserInput.<init>()V
+					putstatic_a 128;		// reference sid/UserInput.p_Instance
+				L2:	getstatic_a 128;		// reference sid/UserInput.p_Instance
+					areturn;
+		}
+
+		.method public auth_update_Bio([BSS)V 1 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_1;
+					sload_2;
+					getfield_a_this 49;		// reference sid/UserInput.challange_biometric
+					getfield_a 50;		// reference sid/UserInput$Biometrics.Biometrics
+					getfield_a_this 49;		// reference sid/UserInput.challange_biometric
+					getfield_s 57;		// short sid/UserInput$Biometrics.index
+					sload_3;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					getfield_a_this 49;		// reference sid/UserInput.challange_biometric
+					dup;
+					getfield_s 57;		// short sid/UserInput$Biometrics.index
+					sload_3;
+					sadd;
+					putfield_s 57;		// short sid/UserInput$Biometrics.index
+					getfield_a_this 49;		// reference sid/UserInput.challange_biometric
+					dup;
+					getfield_s 58;		// short sid/UserInput$Biometrics.size
+					sload_3;
+					sadd;
+					putfield_s 58;		// short sid/UserInput$Biometrics.size
+					return;
+		}
+
+		.method public setPassword([BSS)V 2 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_1;
+					sload_2;
+					getfield_a_this 52;		// reference sid/UserInput.Password
+					sconst_0;
+					sload_3;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_0;
+					sload_3;
+					putfield_s 53;		// short sid/UserInput.PasswordSize
+					return;
+		}
+
+		.method public setIdentity([BSS)V 3 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_1;
+					sload_2;
+					getfield_a_this 55;		// reference sid/UserInput.Identity
+					sconst_0;
+					sload_3;
+					invokestatic 67;		// javacard/framework/Util.arrayCopy([BS[BSS)S
+					pop;
+					aload_0;
+					sload_3;
+					putfield_s 54;		// short sid/UserInput.IdentitySize
+					return;
+		}
+
+	}
+
+}
